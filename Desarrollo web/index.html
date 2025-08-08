@@ -4,10 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <script>
+        function cambiarImagen() {
+            const box = document.getElementById("contenedor-foto");
+            // Reemplaza por la segunda imagen y la deja estática (echo por chat)
+            box.innerHTML = `
+                <img src="prueba_1.png" alt="Foto de mi persona"
+                     style="width: 200px;height: 200px; display:block; user-select:none; pointer-events:none;">
+            `;
+        }
+    </script>
+    
 </head>
 <body>
  
-    <img src="prueba_1.png" alt="Foto de mi persona" style="width: 200px;height: 200px;">
+    <div id="contenedor-foto" style="width: 200px;height: 200px;">
+        <img src="Foto.png" alt="Foto de mi persona" style="width: 200px;height: 200px; cursor: pointer;" onclick="cambiarImagen()">
+    </div>
     <h5>Juan Pablo Madriz</h5> 
     
     <img src="https://res.cloudinary.com/ufmedu/images/f_auto,q_auto/v1607116958/Escudo-UFM/Escudo-UFM.jpg" alt="Foto universidad Marroquin" style="width: 200px;height: 200px;">
