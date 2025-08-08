@@ -1,32 +1,21 @@
+<!--Scripts de Javascript hasta abajo-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <script>
-        function cambiarImagen() {
-            const box = document.getElementById("contenedor-foto");
-            // Reemplaza por la segunda imagen y la deja estática (echo por chat)
-            box.innerHTML = `
-                <img src="prueba_1.png" alt="Foto de mi persona"
-                     style="width: 200px;height: 200px; display:block; user-select:none; pointer-events:none;">
-            `;
-        }
-    </script>
-    
+    <title>Document</title>    
 </head>
 <body>
- 
+ <!--Foto personal-->
     <div id="contenedor-foto" style="width: 200px;height: 200px;">
         <img src="Foto.png" alt="Foto de mi persona" style="width: 200px;height: 200px; cursor: pointer;" onclick="cambiarImagen()">
     </div>
     <h5>Juan Pablo Madriz</h5> 
-    
+ <!--Foto de universidad (sacada de google)-->
     <img src="https://res.cloudinary.com/ufmedu/images/f_auto,q_auto/v1607116958/Escudo-UFM/Escudo-UFM.jpg" alt="Foto universidad Marroquin" style="width: 200px;height: 200px;">
     <h5>Imagen de google</h5>
-    
+ <!--Links de contact me en sus iconos (imgs de internet)-->    
     <h2>Contact Me</h2>
 
     <a href="mailto: jpmadriz@ufm.edu"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDlvRQVEe1AEvAUI0xD9JVnsDLAAnulRBxYQ&s" alt="icono de gmail con enlace a mi correo" style="width: 30px;height: 30px;">
@@ -35,7 +24,7 @@
     </a>
     <a href="https://gt.linkedin.com/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmWMvnDh0s8BWSpEzLIv0T9WvW4GeJ8t6T8A&s" alt="icono de linkedin con link a linkedin" style="width: 30;height: 30px;">
     </a>
-
+ <!--Listas de softskilss y habilidades-->
     <h2> Softskills</h2>
     <ul>
         <li>Extrovertido</li>
@@ -57,3 +46,16 @@
     
 </body>
 </html>
+
+
+<!--Los scripts los puese abajo por orden-->
+<script>
+        function cambiarImagen() {
+            const box = document.getElementById("contenedor-foto");
+            // Reemplaza por la segunda imagen y la deja estática (echo por chat)
+            box.innerHTML = `
+                <img src="prueba_1.png" alt="Foto de mi persona"
+                     style="width: 200px;height: 200px; display:block; user-select:none; pointer-events:none;">
+            `;
+        }
+</script>
