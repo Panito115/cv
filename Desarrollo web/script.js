@@ -3,6 +3,6 @@ function cambiarImagen() {
     // Reemplaza por la segunda imagen y la deja estática
     box.innerHTML = `
         <img src="prueba_1.png" alt="Foto de mi persona"
-             style="width: 200px;height: 200px; display:block; user-select:none; pointer-events:none;">
+             style="width: 250px;height: 250px; display:block; user-select:none; pointer-events:none;">
     `;
 }
