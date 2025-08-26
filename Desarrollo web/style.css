@@ -28,14 +28,14 @@ h2{
 
 /* Columna izquierda (negra) */
 .columna.izquierda {
-  width: 30%;          /* 30% del ancho */
+  width: 20%;          /* 30% del ancho */
   background: black;
   min-height: 100vh;   /* ocupa toda la altura de la página */
 }
 
 /* Columna derecha (contenido) */
 .columna.derecha {
-  width: 70%;
+  width: 80%;
   background: beige;
   padding: 20px;
 }
