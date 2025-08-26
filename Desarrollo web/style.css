@@ -1,3 +1,7 @@
+html, body {
+  height: 100%;      /* Usa el 100% del "navegador" */
+  margin: 0;
+}
 /* Declara tamaño de icones de imagenes*/
 .icons_imgs{
     height: 30px;
@@ -16,3 +20,24 @@ h2{
     font-family: arial;
     font-size: 20px;
 }
+/* Contenedor Flex */
+.contenedor {
+  display: flex;
+  min-height: 100vh;   /* al menos ocupa la altura de la pantalla */
+}
+
+/* Columna izquierda (negra) */
+.columna.izquierda {
+  width: 30%;          /* 30% del ancho */
+  background: black;
+  min-height: 100vh;   /* ocupa toda la altura de la página */
+}
+
+/* Columna derecha (contenido) */
+.columna.derecha {
+  width: 70%;
+  background: beige;
+  padding: 20px;
+}
+
+
