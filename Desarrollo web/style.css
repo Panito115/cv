@@ -3,8 +3,16 @@
     height: 30px;
     width: 30px;
 }
-
+/* Declara color y fondo de mi nombre y puesto*/
 #my_name_position{
     color: white;
     background-color: black;
+    font-family: Arial;
+    font-size: 25px;
+}
+/* Declara todos los h2*/
+h2{
+    color: black;
+    font-family: arial;
+    font-size: 20px;
 }
