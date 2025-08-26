@@ -40,4 +40,35 @@ h2{
   padding: 20px;
 }
 
+/* --- DERECHA: contenedor de cuadros en GRID --- */
+.cuadros {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr); /* 3 filas iguales */
+  gap: 20px;
+  height: 100%; /* ocupa toda la altura disponible */
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Barra de título del cuadro (ponla negra si quieres) */
+.card__header {
+  background: #000;     /* cámbialo si quieres otro color */
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 14px;
+  text-transform: uppercase;
+}
+
+/* Cuerpo del cuadro */
+.card__body {
+  padding: 14px 16px;
+}
+
 
