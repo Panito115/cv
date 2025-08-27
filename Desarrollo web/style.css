@@ -15,6 +15,14 @@ html, body {
     margin: 2px 0;
     line-height: 1.5;
 }
+p{
+  color: #fff;
+  line-height: 1;
+}
+#perfil{
+  color: #fff;
+  line-height: 0.5;
+}
 #contact{
         color: white;
     font-family: Arial;
@@ -80,4 +88,42 @@ h2{
   padding: 18px 20px;
   min-height: 160px;      /* “gordito” por defecto; ajústalo a 140/180/200px si quieres */
   /* crecerá automáticamente si el contenido es más grande */
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: column; /* móvil primero */
+  min-height: 100vh;
+}
+
+.columna {
+  padding: 20px;
+}
+
+.izquierda {
+  background: #111;
+  color: #fff;
+}
+
+.derecha {
+  background: #fff;
+  color: #111;
+}
+
+/* Tablet y compu: dos columnas */
+@media (min-width: 768px) {
+  .contenedor {
+    flex-direction: row;
+  }
+  .izquierda {
+    width: 30%;
+  }
+  .derecha {
+    width: 70%;
+  }
 }
