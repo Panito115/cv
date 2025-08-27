@@ -10,9 +10,25 @@ html, body {
 /* Declara color y fondo de mi nombre y puesto*/
 #my_name_position{
     color: white;
-    background-color: black;
     font-family: Arial;
     font-size: 25px;
+    margin: 2px 0;
+    line-height: 1.5;
+}
+#contact{
+        color: white;
+    font-family: Arial;
+    font-size: 25px;
+    margin: 2px 0;
+    line-height: 1.5;
+}
+#position{
+    color: white;
+    background-color: black;
+    font-family: Arial;
+    font-size: 15px;
+    margin: 2px 0;
+    line-height: 0.8;
 }
 /* Declara todos los h2*/
 h2{
@@ -32,43 +48,36 @@ h2{
   background: black;
   min-height: 100vh;   /* ocupa toda la altura de la página */
 }
-
-/* Columna derecha (contenido) */
+/* --- Overrides para que los cuadros llenen todo el ancho y sean blancos --- */
 .columna.derecha {
-  width: 80%;
-  background: beige;
-  padding: 20px;
+  padding: 0;             /* que toquen el borde del sidebar negro */
 }
 
-/* --- DERECHA: contenedor de cuadros en GRID --- */
 .cuadros {
-  display: grid;
-  grid-template-rows: repeat(3, 1fr); /* 3 filas iguales */
-  gap: 20px;
-  height: 100%; /* ocupa toda la altura disponible */
+  display: flex;          /* apilados verticalmente */
+  flex-direction: column;
+  gap: 16px;              /* separación entre cuadros */
+  margin: 0;
+  width: 100%;
 }
 
 .card {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  background: #fff;       /* cuadro blanco */
+  border: none;           /* sin borde */
+  border-radius: 0;       /* sin esquinas redondas */
+  width: 100%;            /* ocupar todo el ancho disponible */
 }
 
-/* Barra de título del cuadro (ponla negra si quieres) */
 .card__header {
-  background: #000;     /* cámbialo si quieres otro color */
+  background: grey;
   color: #fff;
-  font-weight: 700;
-  padding: 10px 14px;
-  text-transform: uppercase;
+  padding: 12px 20px;
+  margin: 0;
 }
 
-/* Cuerpo del cuadro */
 .card__body {
-  padding: 14px 16px;
+  background: #fff;       /* cuerpo blanco */
+  padding: 18px 20px;
+  min-height: 160px;      /* “gordito” por defecto; ajústalo a 140/180/200px si quieres */
+  /* crecerá automáticamente si el contenido es más grande */
 }
-
-
