@@ -1,133 +1,171 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<!--Pone el favicon-->
-    <link rel="icon" type="imagen/png" href="prueba_1.png">
-    <link rel="stylesheet" href="style.css">
-    
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV (Diseño)</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="contenedor">
-         <!--Todo lo que este dentro es del lado negro-->
-        <div class="columna izquierda">
-           <!--Foto personal-->
-    <img src="prueba_1.png" alt="Enlace a mi mail" style="height: 300px; width: 255px;">
-    <h5 id="my_name_position"> Juan Madriz</h5> 
-    <h4 id="position">SpaceX CEO</h4>
-    <!--Perfil sobre mi-->
-      <h2 id="perfil">Perfil</h2>
-      <p>Estudio Computer Science y me apasiona usar la tecnología para mejorar la vida de las personas. 
-        Me interesan los proyectos de emprendimiento y la creación de soluciones que conecten y faciliten
-         el día a día. Mis principales aptitudes son la creatividad, que me impulsa a generar ideas innovadoras, y
-          la capacidad de relacionarme con las personas, construyendo vínculos sólidos y colaborativos.</p>
-    <!--iconos de contact me-->
-    <h2 id="contact">Contact Me</h2>
-    <a href="mailto: jpmadriz@ufm.edu"><img src="mail.jpg" alt="Enlace a mi mail" class="icons_imgs">
-    </a>
-    <a href="https://github.com/Panito115"><img src="github.png" alt="Enlace a mi github" class="icons_imgs">
-    </a>
-    <a href="https://gt.linkedin.com/"><img src="linkedin.png" alt="Enlace a mi linkedin" class="icons_imgs">
-    </a>
-    
+  <div class="page-wrap">
+    <div class="cv-grid">
+    <!-- LADO IZQUIERDO (oscuro) -->
+      <aside class="sidebar">
+        <div class="avatar"></div>
+
+        <div class="name-role">
+          <div class="skeleton title-lg">Juan Pablo Madriz</div>
+          <div class="skeleton title-md">Computer Scientist</div>
+          <div class="role">Tesla CEO</div>
+        </div>
+    <!--Perfil y su parrafo -->
+        <section class="block">
+          <h3 class="block-title">PERFIL</h3>
+          <div class="lines">
+            <span class="line">ff</span>
+            <span class="line">ss</span>
+            <span class="line short">ss</span>
+          </div>
+        </section>
+
+        <section class="block">
+          <h3 class="block-title">INFO. CONTACTO</h3>
+          <ul class="list">
+            <li class="skeleton pill"></li>
+            <li class="skeleton pill"></li>
+            <li class="skeleton pill"></li>
+            <li class="skeleton pill"></li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h3 class="block-title">SOCIAL MEDIA</h3>
+          <ul class="social">
+            <li><span class="icon"></span><div class="skeleton line"></div></li>
+            <li><span class="icon"></span><div class="skeleton line"></div></li>
+            <li><span class="icon"></span><div class="skeleton line"></div></li>
+          </ul>
+        </section>
+      </aside>
+
+      <!-- LADO DERECHO (claro) -->
+      <main class="content">
+        <header class="strip">
+          <h2>ESPECIALIDADES</h2>
+        </header>
+
+        <section class="specialties">
+          <div class="spec"><span class="glyph"></span></div>
+          <div class="spec"><span class="glyph"></span></div>
+          <div class="spec"><span class="glyph"></span></div>
+          <div class="spec"><span class="glyph"></span></div>
+          <div class="spec"><span class="glyph"></span></div>
+          <div class="spec"><span class="glyph"></span></div>
+        </section>
+
+        <div class="bullet-cols">
+          <ul class="bullets">
+            <li class="skeleton line"></li>
+            <li class="skeleton line"></li>
+            <li class="skeleton line short"></li>
+          </ul>
+          <ul class="bullets">
+            <li class="skeleton line"></li>
+            <li class="skeleton line"></li>
+            <li class="skeleton line short"></li>
+          </ul>
         </div>
 
-        <!--Columna derecha-->
-        <div class="columna derecha">
-          <div class="cuadros">
-    <section class="card">
-      <div class="card__header">Educación</div>
-      <div class="card__body"></div>
-    </section>
-    <section class="card">
-      <div class="card__header">Experiencia</div>
-      <div class="card__body"></div>
-    </section>
-    <section class="card">
-      <div class="card__header">Cursos / Certificaciones</div>
-      <div class="card__body"></div>
-    </section>
+        <header class="strip">
+          <h2>EXPERIENCIA LABORAL</h2>
+        </header>
+
+        <section class="experience">
+          <article class="exp-row">
+            <div class="year">2024</div>
+            <div class="exp-body">
+              <div class="skeleton title-sm"></div>
+              <ul class="bullets">
+                <li class="skeleton line"></li>
+                <li class="skeleton line short"></li>
+              </ul>
+            </div>
+          </article>
+          <article class="exp-row">
+            <div class="year">2022</div>
+            <div class="exp-body">
+              <div class="skeleton title-sm"></div>
+              <ul class="bullets">
+                <li class="skeleton line"></li>
+                <li class="skeleton line short"></li>
+              </ul>
+            </div>
+          </article>
+          <article class="exp-row">
+            <div class="year">2020</div>
+            <div class="exp-body">
+              <div class="skeleton title-sm"></div>
+              <ul class="bullets">
+                <li class="skeleton line"></li>
+                <li class="skeleton line short"></li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <header class="strip strip-bottom">
+          <h2>HABILIDADES</h2>
+        </header>
+
+        <section class="skills">
+          <div class="skill">
+            <span class="label skeleton short"></span>
+            <div class="dots">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+
+          <div class="skill"><span class="label skeleton short"></span><div class="dots">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span>
+          </div></div>
+
+          <div class="skill"><span class="label skeleton short"></span><div class="dots">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span>
+          </div></div>
+
+          <div class="skill"><span class="label skeleton short"></span><div class="dots">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span>
+          </div></div>
+
+          <div class="skill"><span class="label skeleton short"></span><div class="dots">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span>
+          </div></div>
+
+          <div class="skill"><span class="label skeleton short"></span><div class="dots">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span>
+          </div></div>
+        </section>
+      </main>
+    </div>
   </div>
- <!--Listas de softskilss y habilidades-->
-    <h2> Softskills</h2>
-    <ul>
-        <li>Extrovertido</li>
-        <li>Resolución de problemas</li>
-        <li>Creatividad</li>
-        <li>Influencia personal</li>
-        <li>Trabajo en equipo</li>
-    </ul>
-
-
-    <h2> Lenguajes de programación</h2>
-    <ul>
-    <li>Python</li>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>Javascript</li>
-    <li>C++</li>
-    </ul>    
-
-    <a href="prueba_1.png" download="Mi_persona"> 
-        <button type="button" style="width: 120px; height: 50px;">Descargar PDF</button>
-    </a>
-<!--Tabla de mi eduación-->
-<section id="educacion">
-  <h2>Educación</h2>
-  <table border="1">
-    <caption>Historial académico</caption>
-    <thead>
-      <tr>
-        <th scope="col">Año</th>
-        <th scope="col">Institución</th>
-        <th scope="col">Título obtenido</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>2027</td>
-        <td>Universidad Francisco Marroquín</td>
-        <td>Licenciatura en Computer Science</td>
-      </tr>
-      <tr>
-        <td>2023</td>
-        <td>Colegio Centro Escolar Solatlo</td>
-        <td>Bachillerato Internacional</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-    
-<!--Tabla de experiencia laboral-->
-
-<section id="experiencia">
-  <h2>Experiencia Laboral</h2>
-  <table border="1">
-    <caption>Historial de experiencia profesional</caption>
-    <thead>
-      <tr>
-        <th scope="col">Periodo</th>
-        <th scope="col">Empresa</th>
-        <th scope="col">Puesto</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>2021 - 2021</td>
-        <td>Distelsa S.A</td>
-        <td>Vacacionista</td>
-      </tr>
-      <tr>
-        <td>2018 - 2020</td>
-        <td>Space x</td>
-        <td>CFO</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-
 </body>
 </html>
