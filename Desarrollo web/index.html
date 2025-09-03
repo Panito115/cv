@@ -1,112 +1,171 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<!--Pone el favicon (No funciona)-->
-    <link rel="icon" type="imagen/png" href="prueba_1.png">
-    
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV (Diseño)</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
- <!--Foto personal-->
-    <div id="contenedor-foto" style="width: 200px;height: 200px;">
-        <img src="TAP ME.png" alt="Foto de mi persona" style="width: 200px;height: 200px; cursor: pointer;" onclick="cambiarImagen()">
+  <div class="page-wrap">
+    <div class="cv-grid">
+    <!-- LADO IZQUIERDO (oscuro) -->
+      <aside class="sidebar">
+        <div class="avatar"></div>
+
+        <div class="name-role">
+          <div class="skeleton title-lg">Juan Pablo Madriz</div>
+          <div class="skeleton title-md">Computer Scientist</div>
+          <div class="role">Tesla CEO</div>
+        </div>
+    <!--Perfil y su parrafo -->
+        <section class="block">
+          <h3 class="block-title">PERFIL</h3>
+          <div class="lines">
+            <span class="line">ff</span>
+            <span class="line">ss</span>
+            <span class="line short">ss</span>
+          </div>
+        </section>
+
+        <section class="block">
+          <h3 class="block-title">INFO. CONTACTO</h3>
+          <ul class="list">
+            <li class="skeleton pill"></li>
+            <li class="skeleton pill"></li>
+            <li class="skeleton pill"></li>
+            <li class="skeleton pill"></li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h3 class="block-title">SOCIAL MEDIA</h3>
+          <ul class="social">
+            <li><span class="icon"></span><div class="skeleton line"></div></li>
+            <li><span class="icon"></span><div class="skeleton line"></div></li>
+            <li><span class="icon"></span><div class="skeleton line"></div></li>
+          </ul>
+        </section>
+      </aside>
+
+      <!-- LADO DERECHO (claro) -->
+      <main class="content">
+        <header class="strip">
+          <h2>ESPECIALIDADES</h2>
+        </header>
+
+        <section class="specialties">
+          <div class="spec"><span class="glyph"></span></div>
+          <div class="spec"><span class="glyph"></span></div>
+          <div class="spec"><span class="glyph"></span></div>
+          <div class="spec"><span class="glyph"></span></div>
+          <div class="spec"><span class="glyph"></span></div>
+          <div class="spec"><span class="glyph"></span></div>
+        </section>
+
+        <div class="bullet-cols">
+          <ul class="bullets">
+            <li class="skeleton line"></li>
+            <li class="skeleton line"></li>
+            <li class="skeleton line short"></li>
+          </ul>
+          <ul class="bullets">
+            <li class="skeleton line"></li>
+            <li class="skeleton line"></li>
+            <li class="skeleton line short"></li>
+          </ul>
+        </div>
+
+        <header class="strip">
+          <h2>EXPERIENCIA LABORAL</h2>
+        </header>
+
+        <section class="experience">
+          <article class="exp-row">
+            <div class="year">2024</div>
+            <div class="exp-body">
+              <div class="skeleton title-sm"></div>
+              <ul class="bullets">
+                <li class="skeleton line"></li>
+                <li class="skeleton line short"></li>
+              </ul>
+            </div>
+          </article>
+          <article class="exp-row">
+            <div class="year">2022</div>
+            <div class="exp-body">
+              <div class="skeleton title-sm"></div>
+              <ul class="bullets">
+                <li class="skeleton line"></li>
+                <li class="skeleton line short"></li>
+              </ul>
+            </div>
+          </article>
+          <article class="exp-row">
+            <div class="year">2020</div>
+            <div class="exp-body">
+              <div class="skeleton title-sm"></div>
+              <ul class="bullets">
+                <li class="skeleton line"></li>
+                <li class="skeleton line short"></li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <header class="strip strip-bottom">
+          <h2>HABILIDADES</h2>
+        </header>
+
+        <section class="skills">
+          <div class="skill">
+            <span class="label skeleton short"></span>
+            <div class="dots">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+
+          <div class="skill"><span class="label skeleton short"></span><div class="dots">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span>
+          </div></div>
+
+          <div class="skill"><span class="label skeleton short"></span><div class="dots">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span>
+          </div></div>
+
+          <div class="skill"><span class="label skeleton short"></span><div class="dots">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span>
+          </div></div>
+
+          <div class="skill"><span class="label skeleton short"></span><div class="dots">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span>
+          </div></div>
+
+          <div class="skill"><span class="label skeleton short"></span><div class="dots">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span>
+          </div></div>
+        </section>
+      </main>
     </div>
-    <h5>Juan Pablo Madriz</h5> 
- <!--Foto de universidad (sacada de google)-->
-    <img src="https://res.cloudinary.com/ufmedu/images/f_auto,q_auto/v1607116958/Escudo-UFM/Escudo-UFM.jpg" alt="Foto universidad Marroquin" style="width: 200px;height: 200px;">
-    <h5>Imagen de google</h5>
- <!--Links de contact me en sus iconos (imgs de internet)-->    
-    <h2>Contact Me</h2>
-
-    <a href="mailto: jpmadriz@ufm.edu"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDlvRQVEe1AEvAUI0xD9JVnsDLAAnulRBxYQ&s" alt="icono de gmail con enlace a mi correo" style="width: 30px;height: 30px;">
-    </a>
-    <a href="https://github.com/Panito115"><img src="https://images.icon-icons.com/3261/PNG/512/github_logo_icon_206752.png" alt="icono de github con link a mi github" style="width: 30px;height: 30px;">
-    </a>
-    <a href="https://gt.linkedin.com/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmWMvnDh0s8BWSpEzLIv0T9WvW4GeJ8t6T8A&s" alt="icono de linkedin con link a linkedin" style="width: 30;height: 30px;">
-    </a>
- <!--Listas de softskilss y habilidades-->
-    <h2> Softskills</h2>
-    <ul>
-        <li>Extrovertido</li>
-        <li>Resolución de problemas</li>
-        <li>Creatividad</li>
-        <li>Influencia personal</li>
-        <li>Trabajo en equipo</li>
-    </ul>
-
-
-    <h2> Lenguajes de programación</h2>
-    <ul>
-    <li>Python</li>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>Javascript</li>
-    <li>C++</li>
-    </ul>    
-
-    <a href="prueba_1.png" download="Mi_persona"> 
-        <button type="button" style="width: 120px; height: 50px;">Descargar PDF</button>
-    </a>
-<!--Tabla de mi eduación-->
-<section id="educacion">
-  <h2>Educación</h2>
-  <table border="1">
-    <caption>Historial académico</caption>
-    <thead>
-      <tr>
-        <th scope="col">Año</th>
-        <th scope="col">Institución</th>
-        <th scope="col">Título obtenido</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>2027</td>
-        <td>Universidad Francisco Marroquín</td>
-        <td>Licenciatura en Computer Science</td>
-      </tr>
-      <tr>
-        <td>2023</td>
-        <td>Colegio Centro Escolar Solatlo</td>
-        <td>Bachillerato Internacional</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-    
-<!--Tabla de experiencia laboral-->
-
-<section id="experiencia">
-  <h2>Experiencia Laboral</h2>
-  <table border="1">
-    <caption>Historial de experiencia profesional</caption>
-    <thead>
-      <tr>
-        <th scope="col">Periodo</th>
-        <th scope="col">Empresa</th>
-        <th scope="col">Puesto</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>2021 - 2021</td>
-        <td>Distelsa S.A</td>
-        <td>Vacacionista</td>
-      </tr>
-      <tr>
-        <td>2018 - 2020</td>
-        <td>Space x</td>
-        <td>CFO</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-
+  </div>
 </body>
 </html>
-
-<!--LLama el archivo con los scripts-->
-<script src="script.js"></script>
