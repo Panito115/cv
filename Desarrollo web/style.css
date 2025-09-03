@@ -44,17 +44,14 @@ body{
   gap: 28px;
 }
 
-.avatar{
+.avatar {
   width: 220px;
   height: 220px;
-  border-radius: 50%;
-  margin: 0 auto;
-  background:
-    radial-gradient(closest-side, #ffe9e4 65%, transparent 66%),
-    conic-gradient(from 90deg, transparent 0 75%, var(--accent) 75% 100%);
-  outline: 10px solid #3a3941;
-  position: relative;
+  object-fit: cover;         /* recorta la foto sin deformarla */
+  display: block;
+  margin: 0 auto;            /* centra dentro de la sidebar */
 }
+
 
 .name-role{
   text-align: left;
