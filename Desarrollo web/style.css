@@ -15,9 +15,9 @@
 html,body{ height:100%; }
 body{
   margin:0;
-  background: var(--charcoal);
+  background: #181818; /* negro */
+  color: #fff;         /* texto blanco */
   font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: var(--text-dark);
 }
 
 /* ====== Lienzo general ====== */
@@ -189,8 +189,18 @@ body{
 
 /* ====== Esqueletos / placeholders ====== */
 .skeleton{ position: relative; overflow: hidden; border-radius: 10px; }
-.skeleton.title-lg{ height: 34px; width: 85%}                    /* My name */
-.skeleton.title-md{ height: 26px; width: 65%;margin-top: 6px; }  /* College title */
+.skeleton.title-lg{
+  height: 34px;
+  width: 85%;
+  font-size: 1.5rem; /* Aumenta el tamaño de la letra */
+  font-weight: 800;
+}                    /* My name */
+.skeleton.title-md{
+  height: 26px;
+  width: 65%;
+  margin-top: 6px;
+  margin-bottom: 12px; /* Espacio extra debajo del título */
+}  /* College title */
 .skeleton.title-sm{ background: #ececf3; }
 .skeleton.line{ background: #ececf3; }
 .skeleton.pill{ background: #46444f; }
@@ -205,4 +215,12 @@ body{
 @media (max-width: 520px){
   .specialties{ grid-template-columns: repeat(2, 1fr); }
   .bullet-cols{ grid-template-columns: 1fr; }
+}
+
+.block-social {
+  margin-top: 12px; /* Menos espacio */
+}
+
+.perfil-text {
+  text-align: justify;
 }
