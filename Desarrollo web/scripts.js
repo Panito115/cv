@@ -49,4 +49,25 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("experience-collapsed", isHidden ? "true" : "false");
     });
   }
+
+  // Toggle de Social Media
+  const socialBtn = document.getElementById("toggle-social");
+  const socialIcon = document.getElementById("icon-social");
+  const socialSection = document.getElementById("social-content");
+  if (socialBtn && socialIcon && socialSection) {
+    const socialCollapsed = localStorage.getItem("social-collapsed") === "true";
+    if (socialCollapsed) {
+      socialSection.classList.add("d-none");
+      socialBtn.setAttribute("aria-expanded", "false");
+      socialIcon.classList.remove("bi-chevron-up");
+      socialIcon.classList.add("bi-chevron-down");
+    }
+    socialBtn.addEventListener("click", function () {
+      const isHidden = socialSection.classList.toggle("d-none");
+      socialBtn.setAttribute("aria-expanded", (!isHidden).toString());
+      socialIcon.classList.toggle("bi-chevron-up", !isHidden);
+      socialIcon.classList.toggle("bi-chevron-down", isHidden);
+      localStorage.setItem("social-collapsed", isHidden ? "true" : "false");
+    });
+  }
 });

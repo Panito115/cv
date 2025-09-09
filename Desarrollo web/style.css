@@ -87,6 +87,21 @@ body{
   letter-spacing: 2px;
   color: #ffddd6;
 }
+/* Fila del título + botón en Social */
+.block-social .block-title-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.block-social .btn-icon{
+  background: transparent;
+  border: none;
+  color: #ffddd6; /* mismo color que el título Social */
+  padding: 4px 6px;
+  line-height: 1;
+}
+.block-social .btn-icon:focus{ outline: none; box-shadow: none; }
+.block-social .btn-icon:hover{ opacity: 0.85; }
 /* Diseño del area de perfil */
 .lines{ display: grid; gap: 8px; }
 .line{
