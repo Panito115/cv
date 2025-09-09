@@ -58,6 +58,24 @@ body{
   position: relative;
 }
 
+/* Saludo dinámico bajo la foto */
+.greeting-banner{
+  display: block;
+  margin: 8px 0 0 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  color: var(--text-on-ink);
+  font-size: 0.95rem;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+.greeting-banner.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .avatar{
   width: 220px;
   height: 220px;

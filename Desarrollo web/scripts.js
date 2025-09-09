@@ -70,4 +70,26 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("social-collapsed", isHidden ? "true" : "false");
     });
   }
+
+  // Saludo dinámico bajo la foto (3s)
+  const greetEl = document.getElementById("greeting");
+  if (greetEl) {
+    const hour = new Date().getHours();
+    let saludo = "Buenas noches";
+    if (hour >= 5 && hour < 12) saludo = "Buenos días";
+    else if (hour >= 12 && hour < 19) saludo = "Buenas tardes";
+    greetEl.textContent = `${saludo}, este es el CV de Juan Pablo Madriz.`;
+    // Mostrar con animación
+    greetEl.classList.remove("d-none");
+    requestAnimationFrame(() => {
+      greetEl.classList.add("show");
+    });
+    // Ocultar tras 3s
+    setTimeout(() => {
+      greetEl.classList.remove("show");
+      setTimeout(() => {
+        greetEl.classList.add("d-none");
+      }, 400);
+    }, 3000);
+  }
 });
