@@ -52,7 +52,7 @@ body{
   background:
     radial-gradient(closest-side, #ffe9e4 65%, transparent 66%),
     conic-gradient(from 90deg, transparent 0 75%, var(--accent) 75% 100%);
-  outline: 10px solid white;
+  outline: 10px solid grey;
   position: relative;
 }
 
@@ -143,16 +143,7 @@ body{
   box-shadow: 0 2px 0 #e1e1e6 inset;
 }
 
-/* Columnas de bullets */
-.bullet-cols{
-  padding: 2px 22px 10px 22px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px 24px;
-}
-.bullets{ list-style: disc; padding-left: 18px; margin: 0; display: grid; gap: 8px; }
-.bullets .line{ height: 12px; background: #ececf3; }
-.bullets .line.short{ width: 70%; }
+¿
 
 /* Experiencia */
 .experience{ padding: 0 22px 6px 22px; display: grid; gap: 18px; }
@@ -178,9 +169,6 @@ body{
   gap: 14px;
   align-items: center;
 }
-.label{ height: 12px; background: #ececf3; border-radius: 8px; }
-.label.short{ width: 60%; }
-
 .dots{ display: grid; grid-auto-flow: column; gap: 8px; justify-content: start; }
 .dot{
   width: 10px; height: 10px; border-radius: 50%;
