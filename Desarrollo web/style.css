@@ -1,22 +1,35 @@
 /* ====== Variables y base ====== */
 :root{
-  --charcoal: #2f2e36;   /* fondo oscuro */
-  --ink: #2b2a30;        /* sidebar */
-  --paper: #ffffff;      /* contenido derecho */
-  --accent: #f39b8b;     /* coral */
-  --text-dark: #1f1f25;
-  --text-light: #f7f7f7;
-  --muted: #9694a3;
-  --line: #ebebef;
+  /* Paleta base: MODO OSCURO */
+  --bg: #181818;           /* fondo general */
+  --ink: #2b2a30;          /* sidebar */
+  --paper: #22242a;        /* panel contenido */
+  --accent: #f39b8b;       /* coral */
+  --text: #f7f7f7;         /* texto principal */
+  --text-on-ink: #f7f7f7;  /* texto sobre sidebar */
+  --muted: #9a98a6;        /* texto secundario */
+  --line: #3a3941;         /* bordes en oscuro */
+  --charcoal: #2f2e36;     /* neutro oscuro */
   --radius: 18px;
+}
+
+/* Overrides de variables para MODO CLARO */
+body.light-mode {
+  --bg: #f7f7f7;
+  --ink: #2b2a30;          /* mismo morado del modo oscuro */
+  --paper: #ffffff;
+  --text: #181818;
+  --text-on-ink: #f7f7f7;  /* contraste sobre sidebar oscuro */
+  --muted: #6a6973;
+  --line: #ebebef;
 }
 
 *{ box-sizing: border-box; }
 html,body{ height:100%; }
 body{
   margin:0;
-  background: #181818; /* negro */
-  color: #fff;         /* texto blanco */
+  background: var(--bg);
+  color: var(--text);
   font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
@@ -36,12 +49,13 @@ body{
 /* ====== Sidebar (columna izquierda) ====== */
 .sidebar{
   background: var(--ink);
-  color: var(--text-light);
+  color: var(--text-on-ink);
   padding: 28px 24px;
   border-radius: var(--radius);
   display: grid;
   align-content: start;
   gap: 28px;
+  position: relative;
 }
 
 .avatar{
@@ -69,7 +83,7 @@ body{
 .block{ display: grid; gap: 12px; }
 .block-title{
   margin: 0;
-  font-size: 14px;
+  font-size: 18px;
   letter-spacing: 2px;
   color: #ffddd6;
 }
@@ -100,6 +114,7 @@ body{
 /* ====== Contenido derecho ====== */
 .content{
   background: var(--paper);
+  color: var(--text);
   padding: 0;
   border-radius: var(--radius);
   overflow: hidden;
@@ -143,8 +158,6 @@ body{
   box-shadow: 0 2px 0 #e1e1e6 inset;
 }
 
-¿
-
 /* Experiencia */
 .experience{ padding: 0 22px 6px 22px; display: grid; gap: 18px; }
 .exp-row{
@@ -155,11 +168,18 @@ body{
 }
 .year{
   font-weight: 700;
-  color: #6a6973;
+  color: var(--muted);
   margin-top: 2px;
 }
 .exp-body{ display: grid; gap: 8px; }
-.title-sm{ height: 16px; background: #ececf3; border-radius: 8px; width: 60%; }
+.title-sm{ height: 16px; background: var(--line); border-radius: 8px; width: 60%; }
+.exp-title {
+  color: var(--text);
+}
+/* En modo claro, los títulos de experiencia van en gris (como el año) */
+body.light-mode .exp-title {
+  color: var(--muted);
+}
 
 /* Habilidades */
 .skills{ padding: 8px 22px 26px 22px; display: grid; gap: 12px; }
@@ -172,7 +192,7 @@ body{
 .dots{ display: grid; grid-auto-flow: column; gap: 8px; justify-content: start; }
 .dot{
   width: 10px; height: 10px; border-radius: 50%;
-  border: 2px solid #2f2e36; background: transparent;
+  border: 2px solid var(--charcoal); background: transparent;
 }
 
 /* ====== Esqueletos / placeholders ====== */
@@ -190,7 +210,7 @@ body{
   margin-bottom: 12px; /* Espacio extra debajo del título */
 }  /* College title */
 .skeleton.title-sm{ background: #ececf3; }
-.skeleton.line{ background: #ececf3; }
+.skeleton.line{ background: var(--line); }
 .skeleton.pill{ background: #46444f; }
 
 /* ====== Responsivo ====== */
@@ -212,3 +232,25 @@ body{
 .perfil-text {
   text-align: justify;
 }
+
+.theme-toggle button {
+  transition: background 0.3s;
+}
+
+#theme-icon {
+  font-size: 1.2rem;
+  transition: transform 0.4s;
+}
+
+.theme-toggle button:active #theme-icon {
+  transform: rotate(180deg) scale(1.2);
+}
+
+body.light-mode .avatar {
+  background:
+    radial-gradient(closest-side, #fff 65%, transparent 66%),
+    conic-gradient(from 90deg, transparent 0 75%, var(--accent) 75% 100%);
+  outline: 10px solid #ccc;
+}
+
+/* Si tienes otros elementos con fondo oscuro, agrégalos aquí */
