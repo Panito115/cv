@@ -1,0 +1,214 @@
+/* ====== Variables y base ====== */
+:root{
+  --charcoal: #2f2e36;   /* fondo oscuro */
+  --ink: #2b2a30;        /* sidebar */
+  --paper: #ffffff;      /* contenido derecho */
+  --accent: #f39b8b;     /* coral */
+  --text-dark: #1f1f25;
+  --text-light: #f7f7f7;
+  --muted: #9694a3;
+  --line: #ebebef;
+  --radius: 18px;
+}
+
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  background: #181818; /* negro */
+  color: #fff;         /* texto blanco */
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* ====== Lienzo general ====== */
+.page-wrap{
+  max-width: 1000px;
+  padding: 32px 16px;
+  margin: 0 auto;
+}
+
+.cv-grid{
+  display: grid;
+  grid-template-columns: 320px 1fr; /* GRID PRINCIPAL */
+  gap: 24px;
+}
+
+/* ====== Sidebar (columna izquierda) ====== */
+.sidebar{
+  background: var(--ink);
+  color: var(--text-light);
+  padding: 28px 24px;
+  border-radius: var(--radius);
+  display: grid;
+  align-content: start;
+  gap: 28px;
+}
+
+.avatar{
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background:
+    radial-gradient(closest-side, #ffe9e4 65%, transparent 66%),
+    conic-gradient(from 90deg, transparent 0 75%, var(--accent) 75% 100%);
+  outline: 10px solid grey;
+  position: relative;
+}
+
+.name-role{
+  text-align: left;
+}
+.role{
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-top: 6px;
+  color: #c9c8cf;
+}
+
+.block{ display: grid; gap: 12px; }
+.block-title{
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #ffddd6;
+}
+/* Diseño del area de perfil */
+.lines{ display: grid; gap: 8px; }
+.line{
+  display: block;
+  height: 10px;
+  border-radius: 8px;
+}
+.line.short{ width: 70%; }
+
+.list{ list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.pill{
+  height: 14px;
+  border-radius: 999px;
+  background: #46444f;
+}
+
+.social{ list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.social li{ display: grid; grid-template-columns: 24px 1fr; gap: 10px; align-items: center; }
+.icon{
+  width: 24px; height: 24px; border-radius: 6px;
+  background: linear-gradient(#ffb8aa, #f39b8b);
+  outline: 2px solid #3a3941;
+}
+
+/* ====== Contenido derecho ====== */
+.content{
+  background: var(--paper);
+  padding: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: grid;
+  align-content: start;
+  gap: 22px;
+}
+
+/* Tiras de encabezado coral */
+.strip{
+  background: var(--accent);
+  padding: 16px 22px;
+}
+.strip h2{
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #2b2a30;
+}
+.strip-bottom{ margin-top: 8px; }
+
+/* Especialidades (iconos 3x2) */
+.specialties{
+  padding: 18px 22px 6px 22px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* GRID INTERNO */
+  gap: 18px;
+}
+.spec{
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+}
+.glyph{
+  width: 48px; height: 48px; border-radius: 12px;
+  background:
+    radial-gradient(circle at 30% 30%, #ffffff 0 35%, transparent 36%),
+    linear-gradient(#ffb8aa, #f39b8b);
+  box-shadow: 0 2px 0 #e1e1e6 inset;
+}
+
+¿
+
+/* Experiencia */
+.experience{ padding: 0 22px 6px 22px; display: grid; gap: 18px; }
+.exp-row{
+  display: grid;
+  grid-template-columns: 64px 1fr;   /* GRID FILA EXPERIENCIA */
+  gap: 16px;
+  align-items: start;
+}
+.year{
+  font-weight: 700;
+  color: #6a6973;
+  margin-top: 2px;
+}
+.exp-body{ display: grid; gap: 8px; }
+.title-sm{ height: 16px; background: #ececf3; border-radius: 8px; width: 60%; }
+
+/* Habilidades */
+.skills{ padding: 8px 22px 26px 22px; display: grid; gap: 12px; }
+.skill{
+  display: grid;
+  grid-template-columns: 220px 1fr; /* GRID FILA HABILIDAD */
+  gap: 14px;
+  align-items: center;
+}
+.dots{ display: grid; grid-auto-flow: column; gap: 8px; justify-content: start; }
+.dot{
+  width: 10px; height: 10px; border-radius: 50%;
+  border: 2px solid #2f2e36; background: transparent;
+}
+
+/* ====== Esqueletos / placeholders ====== */
+.skeleton{ position: relative; overflow: hidden; border-radius: 10px; }
+.skeleton.title-lg{
+  height: 34px;
+  width: 85%;
+  font-size: 1.5rem; /* Aumenta el tamaño de la letra */
+  font-weight: 800;
+}                    /* My name */
+.skeleton.title-md{
+  height: 26px;
+  width: 65%;
+  margin-top: 6px;
+  margin-bottom: 12px; /* Espacio extra debajo del título */
+}  /* College title */
+.skeleton.title-sm{ background: #ececf3; }
+.skeleton.line{ background: #ececf3; }
+.skeleton.pill{ background: #46444f; }
+
+/* ====== Responsivo ====== */
+@media (max-width: 960px){
+  .cv-grid{ grid-template-columns: 1fr; }
+  .avatar{ width: 180px; height: 180px; }
+  .skill{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px){
+  .specialties{ grid-template-columns: repeat(2, 1fr); }
+  .bullet-cols{ grid-template-columns: 1fr; }
+}
+
+.block-social {
+  margin-top: 12px; /* Menos espacio */
+}
+
+.perfil-text {
+  text-align: justify;
+}
