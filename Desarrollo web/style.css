@@ -127,6 +127,9 @@ body{
 .strip{
   background: var(--accent);
   padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .strip h2{
   margin: 0;

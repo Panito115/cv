@@ -26,4 +26,27 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("theme", "dark");
     }
   });
+
+  // Toggle de Experiencia Laboral
+  const expBtn = document.getElementById("toggle-experience");
+  const expIcon = document.getElementById("icon-experience");
+  const expSection = document.getElementById("experience-content");
+  if (expBtn && expIcon && expSection) {
+    // Estado inicial desde localStorage
+    const collapsed = localStorage.getItem("experience-collapsed") === "true";
+    if (collapsed) {
+      expSection.classList.add("d-none");
+      expBtn.setAttribute("aria-expanded", "false");
+      expIcon.classList.remove("bi-chevron-up");
+      expIcon.classList.add("bi-chevron-down");
+    }
+
+    expBtn.addEventListener("click", function () {
+      const isHidden = expSection.classList.toggle("d-none");
+      expBtn.setAttribute("aria-expanded", (!isHidden).toString());
+      expIcon.classList.toggle("bi-chevron-up", !isHidden);
+      expIcon.classList.toggle("bi-chevron-down", isHidden);
+      localStorage.setItem("experience-collapsed", isHidden ? "true" : "false");
+    });
+  }
 });
