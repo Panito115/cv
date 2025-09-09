@@ -164,6 +164,41 @@ body{
   align-items: center;
   justify-content: space-between;
 }
+
+/* Buscador de habilidades */
+.skill-search{ max-width: 240px; }
+
+/* Iconos de acciones en header de HABILIDADES */
+.btn-icon-header{
+  background: transparent;
+  border: none;
+  color: #2b2a30; /* mismo color que .strip h2 */
+  padding: 4px 6px;
+  line-height: 1;
+}
+.btn-icon-header:hover{ opacity: 0.9; }
+.btn-icon-header:focus{ box-shadow: none; outline: none; }
+
+.skills-search-panel{
+  padding: 10px 22px 0 22px;
+}
+.skills-search-panel .form-control{
+  max-width: 240px;
+  background: transparent;
+  border: 2px solid #2b2a30; /* color de la lupa/título */
+  color: #2b2a30;
+  border-radius: 12px;
+  box-shadow: none;
+}
+.skills-search-panel .form-control:focus{
+  background: transparent;
+  border-color: #2b2a30;
+  box-shadow: none;
+}
+.skills-search-panel .form-control::placeholder{
+  color: #2b2a30;
+  opacity: 0.8;
+}
 .strip h2{
   margin: 0;
   font-size: 18px;

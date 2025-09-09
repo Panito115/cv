@@ -117,8 +117,16 @@
         </section>
 
         <header class="strip strip-bottom">
-          <h2>HABILIDADES</h2>
+          <h2 class="m-0">HABILIDADES</h2>
+          <div class="strip-actions">
+            <button id="skills-search-toggle" class="btn btn-icon-header" aria-expanded="false" aria-controls="skills-search-panel" title="Buscar habilidades">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
         </header>
+        <div id="skills-search-panel" class="skills-search-panel d-none">
+          <input id="skill-search" type="search" class="form-control form-control-sm" placeholder="Buscar habilidad..." aria-label="Buscar habilidad" />
+        </div>
 
         <section class="skills">
           <div class="skill">

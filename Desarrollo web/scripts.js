@@ -71,6 +71,54 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Filtro de habilidades
+  const skillInput = document.getElementById("skill-search");
+  const skillsContainer = document.querySelector(".skills");
+  const skillsSearchToggle = document.getElementById("skills-search-toggle");
+  const skillsSearchPanel = document.getElementById("skills-search-panel");
+  if (skillInput && skillsContainer) {
+    // Mensaje de vacío (insertado una vez)
+    const emptyId = "skills-empty";
+    let emptyMsg = document.getElementById(emptyId);
+    if (!emptyMsg) {
+      emptyMsg = document.createElement("p");
+      emptyMsg.id = emptyId;
+      emptyMsg.className = "text-muted small mt-2 d-none";
+      emptyMsg.textContent = "Sin resultados";
+      skillsContainer.appendChild(emptyMsg);
+    }
+
+    const normalize = (s) => s
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+
+    const applyFilter = () => {
+      const q = normalize(skillInput.value || "");
+      const items = skillsContainer.querySelectorAll(".skill");
+      let visible = 0;
+      items.forEach((el) => {
+        const labelEl = el.querySelector(".label");
+        const name = labelEl ? normalize(labelEl.textContent || "") : "";
+        const match = q === "" || name.includes(q);
+        el.classList.toggle("d-none", !match);
+        if (match) visible++;
+      });
+      emptyMsg.classList.toggle("d-none", visible !== 0);
+    };
+
+    skillInput.addEventListener("input", applyFilter);
+
+    if (skillsSearchToggle && skillsSearchPanel) {
+      skillsSearchToggle.addEventListener("click", function(){
+        const hidden = skillsSearchPanel.classList.toggle("d-none");
+        skillsSearchToggle.setAttribute("aria-expanded", (!hidden).toString());
+        if (!hidden) {
+          setTimeout(() => skillInput.focus(), 0);
+        }
+      });
+    }
+  }
   // Saludo dinámico bajo la foto (3s)
   const greetEl = document.getElementById("greeting");
   if (greetEl) {
