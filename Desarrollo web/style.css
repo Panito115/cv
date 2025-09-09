@@ -15,9 +15,9 @@
 html,body{ height:100%; }
 body{
   margin:0;
-  background: var(--charcoal);
+  background: #181818; /* negro */
+  color: #fff;         /* texto blanco */
   font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: var(--text-dark);
 }
 
 /* ====== Lienzo general ====== */
@@ -52,7 +52,7 @@ body{
   background:
     radial-gradient(closest-side, #ffe9e4 65%, transparent 66%),
     conic-gradient(from 90deg, transparent 0 75%, var(--accent) 75% 100%);
-  outline: 10px solid #3a3941;
+  outline: 10px solid grey;
   position: relative;
 }
 
@@ -143,16 +143,7 @@ body{
   box-shadow: 0 2px 0 #e1e1e6 inset;
 }
 
-/* Columnas de bullets */
-.bullet-cols{
-  padding: 2px 22px 10px 22px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px 24px;
-}
-.bullets{ list-style: disc; padding-left: 18px; margin: 0; display: grid; gap: 8px; }
-.bullets .line{ height: 12px; background: #ececf3; }
-.bullets .line.short{ width: 70%; }
+¿
 
 /* Experiencia */
 .experience{ padding: 0 22px 6px 22px; display: grid; gap: 18px; }
@@ -178,9 +169,6 @@ body{
   gap: 14px;
   align-items: center;
 }
-.label{ height: 12px; background: #ececf3; border-radius: 8px; }
-.label.short{ width: 60%; }
-
 .dots{ display: grid; grid-auto-flow: column; gap: 8px; justify-content: start; }
 .dot{
   width: 10px; height: 10px; border-radius: 50%;
@@ -189,8 +177,18 @@ body{
 
 /* ====== Esqueletos / placeholders ====== */
 .skeleton{ position: relative; overflow: hidden; border-radius: 10px; }
-.skeleton.title-lg{ height: 34px; width: 85%}                    /* My name */
-.skeleton.title-md{ height: 26px; width: 65%;margin-top: 6px; }  /* College title */
+.skeleton.title-lg{
+  height: 34px;
+  width: 85%;
+  font-size: 1.5rem; /* Aumenta el tamaño de la letra */
+  font-weight: 800;
+}                    /* My name */
+.skeleton.title-md{
+  height: 26px;
+  width: 65%;
+  margin-top: 6px;
+  margin-bottom: 12px; /* Espacio extra debajo del título */
+}  /* College title */
 .skeleton.title-sm{ background: #ececf3; }
 .skeleton.line{ background: #ececf3; }
 .skeleton.pill{ background: #46444f; }
@@ -205,4 +203,12 @@ body{
 @media (max-width: 520px){
   .specialties{ grid-template-columns: repeat(2, 1fr); }
   .bullet-cols{ grid-template-columns: 1fr; }
+}
+
+.block-social {
+  margin-top: 12px; /* Menos espacio */
+}
+
+.perfil-text {
+  text-align: justify;
 }
