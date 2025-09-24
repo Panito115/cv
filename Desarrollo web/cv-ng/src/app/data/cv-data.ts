@@ -21,5 +21,6 @@ export const skills = [
 ];
 
 export const education = [
+  { year: '2018–2021', title: 'Colegio Bilingüe New Horizons', desc: 'Bachillerato en Ciencias y Letras — graduado con honores, GPA: 3.8/4.0.' },
   { year: '2024–Pres.', title: 'Universidad Francisco Marroquín (UFM)', desc: 'Computer Science & Business Engineering — cursos relevantes: Estructuras de Datos, CS:APP, Estadística, Microeconomía.' },
 ];
