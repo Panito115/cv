@@ -256,6 +256,7 @@ body.light-mode .exp-title {
 /* Habilidades */
 .skills{ padding: 8px 22px 26px 22px; display: grid; gap: 12px; }
 .skill{
+  color:  red; /* Eventualmente también borrar esta linea de codigo por estetica solo existe para el entragable*/
   display: grid;
   grid-template-columns: 220px 1fr; /* GRID FILA HABILIDAD */
   gap: 14px;
