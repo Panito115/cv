@@ -1,0 +1,329 @@
+/* ====== Variables y base ====== */
+:root{
+  /* Paleta base: MODO OSCURO */
+  --bg: #181818;           /* fondo general */
+  --ink: #2b2a30;          /* sidebar */
+  --paper: #22242a;        /* panel contenido */
+  --accent: #f39b8b;       /* coral */
+  --text: #f7f7f7;         /* texto principal */
+  --text-on-ink: #f7f7f7;  /* texto sobre sidebar */
+  --muted: #9a98a6;        /* texto secundario */
+  --line: #3a3941;         /* bordes en oscuro */
+  --charcoal: #2f2e36;     /* neutro oscuro */
+  --radius: 18px;
+}
+
+/* Overrides de variables para MODO CLARO */
+body.light-mode {
+  --bg: #f7f7f7;
+  --ink: #2b2a30;          /* mismo morado del modo oscuro */
+  --paper: #ffffff;
+  --text: #181818;
+  --text-on-ink: #f7f7f7;  /* contraste sobre sidebar oscuro */
+  --muted: #6a6973;
+  --line: #ebebef;
+}
+
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* ====== Lienzo general ====== */
+.page-wrap{
+  max-width: 1000px;
+  padding: 32px 16px;
+  margin: 0 auto;
+}
+
+.cv-grid{
+  display: grid;
+  grid-template-columns: 320px 1fr; /* GRID PRINCIPAL */
+  gap: 24px;
+}
+
+/* ====== Sidebar (columna izquierda) ====== */
+.sidebar{
+  background: var(--ink);
+  color: var(--text-on-ink);
+  padding: 28px 24px;
+  border-radius: var(--radius);
+  display: grid;
+  align-content: start;
+  gap: 28px;
+  position: relative;
+}
+
+/* Saludo dinámico bajo la foto */
+.greeting-banner{
+  display: block;
+  margin: 8px 0 0 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  color: var(--text-on-ink);
+  font-size: 0.95rem;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+.greeting-banner.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.avatar{
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background:
+    radial-gradient(closest-side, #ffe9e4 65%, transparent 66%),
+    conic-gradient(from 90deg, transparent 0 75%, var(--accent) 75% 100%);
+  outline: 10px solid grey;
+  position: relative;
+}
+
+.name-role{
+  text-align: left;
+}
+.role{
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-top: 6px;
+  color: #c9c8cf;
+}
+
+.block{ display: grid; gap: 12px; }
+.block-title{
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #ffddd6;
+}
+/* Fila del título + botón en Social */
+.block-social .block-title-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.block-social .btn-icon{
+  background: transparent;
+  border: none;
+  color: #ffddd6; /* mismo color que el título Social */
+  padding: 4px 6px;
+  line-height: 1;
+}
+.block-social .btn-icon:focus{ outline: none; box-shadow: none; }
+.block-social .btn-icon:hover{ opacity: 0.85; }
+/* Diseño del area de perfil */
+.lines{ display: grid; gap: 8px; }
+.line{
+  display: block;
+  height: 10px;
+  border-radius: 8px;
+}
+.line.short{ width: 70%; }
+
+.list{ list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.pill{
+  height: 14px;
+  border-radius: 999px;
+  background: black;/* (#46444f, color original) regresar al color original por su estetica, funciona al apachar boton claro oscuro*/
+}
+
+.social{ list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.social li{ display: grid; grid-template-columns: 24px 1fr; gap: 10px; align-items: center; }
+.icon{
+  width: 24px; height: 24px; border-radius: 6px;
+  background: linear-gradient(#ffb8aa, #f39b8b);
+  outline: 2px solid #3a3941;
+}
+
+/* ====== Contenido derecho ====== */
+.content{
+  background: var(--paper);
+  color: var(--text);
+  padding: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: grid;
+  align-content: start;
+  gap: 22px;
+}
+
+/* Tiras de encabezado coral */
+.strip{
+  background: var(--accent);
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Buscador de habilidades */
+.skill-search{ max-width: 240px; }
+
+/* Iconos de acciones en header de HABILIDADES */
+.btn-icon-header{
+  background: transparent;
+  border: none;
+  color: #2b2a30; /* mismo color que .strip h2 */
+  padding: 4px 6px;
+  line-height: 1;
+}
+.btn-icon-header:hover{ opacity: 0.9; }
+.btn-icon-header:focus{ box-shadow: none; outline: none; }
+
+.skills-search-panel{
+  padding: 10px 22px 0 22px;
+}
+.skills-search-panel .form-control{
+  max-width: 240px;
+  background: transparent;
+  border: 2px solid #2b2a30; /* color de la lupa/título */
+  color: #2b2a30;
+  border-radius: 12px;
+  box-shadow: none;
+}
+.skills-search-panel .form-control:focus{
+  background: transparent;
+  border-color: #2b2a30;
+  box-shadow: none;
+}
+.skills-search-panel .form-control::placeholder{
+  color: #2b2a30;
+  opacity: 0.8;
+}
+.strip h2{
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #2b2a30;
+}
+.strip-bottom{ margin-top: 8px; }
+
+/* Especialidades (iconos 3x2) */
+.specialties{
+  background: yellow; /* Eventualmente borrar esta linea de codigo por estetica del cv solo existe para el entragable */
+  padding: 18px 22px 6px 22px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* GRID INTERNO */
+  gap: 18px;
+}
+.spec{
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+}
+.glyph{
+  width: 48px; height: 48px; border-radius: 12px;
+  background:
+    radial-gradient(circle at 30% 30%, #ffffff 0 35%, transparent 36%),
+    linear-gradient(#ffb8aa, #f39b8b);
+  box-shadow: 0 2px 0 #e1e1e6 inset;
+}
+
+/* Experiencia */
+.experience{ padding: 0 22px 6px 22px; display: grid; gap: 18px; }
+.exp-row{
+  display: grid;
+  grid-template-columns: 64px 1fr;   /* GRID FILA EXPERIENCIA */
+  gap: 16px;
+  align-items: start;
+}
+.year{
+  font-weight: 700;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.exp-body{ display: grid; gap: 8px; }
+.title-sm{ height: 16px; background: var(--line); border-radius: 8px; width: 60%; }
+.exp-title {
+  color: var(--text);
+}
+/* En modo claro, los títulos de experiencia van en gris (como el año) */
+body.light-mode .exp-title {
+  color: var(--muted);
+}
+
+/* Habilidades */
+.skills{ padding: 8px 22px 26px 22px; display: grid; gap: 12px; }
+.skill{
+  color:  red; /* Eventualmente también borrar esta linea de codigo por estetica solo existe para el entragable*/
+  display: grid;
+  grid-template-columns: 220px 1fr; /* GRID FILA HABILIDAD */
+  gap: 14px;
+  align-items: center;
+}
+.dots{ display: grid; grid-auto-flow: column; gap: 8px; justify-content: start; }
+.dot{
+  width: 10px; height: 10px; border-radius: 50%;
+  border: 2px solid var(--charcoal); background: transparent;
+}
+
+/* ====== Esqueletos / placeholders ====== */
+.skeleton{ position: relative; overflow: hidden; border-radius: 10px; }
+.skeleton.title-lg{
+  height: 34px;
+  width: 85%;
+  font-size: 1.5rem; /* Aumenta el tamaño de la letra */
+  font-weight: 800;
+}                    /* My name */
+.skeleton.title-md{
+  height: 26px;
+  width: 65%;
+  margin-top: 6px;
+  margin-bottom: 12px; /* Espacio extra debajo del título */
+}  /* College title */
+.skeleton.title-sm{ background: #ececf3; }
+.skeleton.line{ background: var(--line); }
+.skeleton.pill{ background: #46444f; }
+
+/* ====== Responsivo ====== */
+@media (max-width: 960px){
+  .cv-grid{ grid-template-columns: 1fr; }
+  .avatar{ width: 180px; height: 180px; }
+  .skill{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px){
+  .specialties{ grid-template-columns: repeat(2, 1fr); }
+  .bullet-cols{ grid-template-columns: 1fr; }
+}
+
+.block-social {
+  margin-top: 12px; /* Menos espacio */
+}
+
+.perfil-text {
+  text-align: justify;
+}
+
+.theme-toggle button {
+  transition: background 0.3s;
+}
+
+#theme-icon {
+  font-size: 1.2rem;
+  transition: transform 0.4s;
+}
+
+.theme-toggle button:active #theme-icon {
+  transform: rotate(180deg) scale(1.2);
+}
+
+body.light-mode .avatar {
+  background:
+    radial-gradient(closest-side, #fff 65%, transparent 66%),
+    conic-gradient(from 90deg, transparent 0 75%, var(--accent) 75% 100%);
+  outline: 10px solid #ccc;
+}
+
+/* Si tienes otros elementos con fondo oscuro, agrégalos aquí */
