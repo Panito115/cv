@@ -233,7 +233,6 @@ body{
 /* Experiencia */
 .experience{ padding: 0 22px 6px 22px; display: grid; gap: 18px; }
 .exp-row{
-  background-color: pink; /* Eventualmente borrar esta linea de codigo por estetica solo existe para el entragable*/
   display: grid;
   grid-template-columns: 64px 1fr;   /* GRID FILA EXPERIENCIA */
   gap: 16px;

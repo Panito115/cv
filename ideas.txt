@@ -1,3 +1,4 @@
 ng serve -o
 lsof -i :4200
 Kill -o (numero que me da)
+http://localhost:4200/
