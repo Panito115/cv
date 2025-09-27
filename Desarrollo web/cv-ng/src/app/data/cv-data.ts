@@ -18,6 +18,8 @@ export const experience = [
 export const skills = [
   { name: 'Python',      level: 9 },
   { name: 'JavaScript',  level: 5 },
+  { name: 'HTML',  level: 9 },
+  { name: 'CSS',  level: 7 },
 ];
 
 export const education = [

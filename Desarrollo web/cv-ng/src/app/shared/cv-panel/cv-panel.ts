@@ -5,15 +5,15 @@ import { CommonModule } from '@angular/common';
   selector: 'cv-panel',
   standalone: true,
   imports: [CommonModule],
-  // 👇 usa el nombre real del archivo que tienes en tu carpeta
-  templateUrl: './cv-panel.html'
+  templateUrl: './cv-panel.html',
+  styleUrl: './cv-panel.css'   // 👈 IMPORTANTE: enlaza el CSS del componente
 })
 export class CvPanelComponent implements OnInit {
   @Input() title = '';
   @Input() collapsible = false;
   @Input() storageKey?: string;
-  @Input() stripBottom = false;   // Variante con .strip-bottom
-  @Input() bodyClass = '';        // Clase para el <section> (ej: "experience", "skills")
+  @Input() stripBottom = false;   // agrega clase 'strip-bottom' al header
+  @Input() bodyClass = '';        // clase para el <section> contenedor
 
   collapsed = false;
 

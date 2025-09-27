@@ -1,0 +1,64 @@
+/* === Estilos de CADA bloque del sidebar (PERFIL, SOCIAL) === */
+
+:host {
+  display: block;
+}
+
+/* Bloque genérico + títulos */
+.block { display: grid; gap: 12px; }
+.block-title {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #ffddd6;
+}
+
+/* Social: fila título + botón plegado */
+.block-social .block-title-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.block-social .btn-icon{
+  background: transparent;
+  border: none;
+  color: #ffddd6;
+  padding: 4px 6px;
+  line-height: 1;
+}
+.block-social .btn-icon:focus{ outline: none; box-shadow: none; }
+.block-social .btn-icon:hover{ opacity: 0.85; }
+
+/* Lista social + iconos */
+.social{ list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.social li{ display: grid; grid-template-columns: 24px 1fr; gap: 10px; align-items: center; }
+.icon{
+  width: 24px; height: 24px; border-radius: 6px;
+  background: linear-gradient(#ffb8aa, #f39b8b);
+  outline: 2px solid #3a3941;
+}
+
+/* Utilidades del área de perfil (si las usas dentro del bloque) */
+.lines{ display: grid; gap: 8px; }
+.line{
+  display: block;
+  height: 10px;
+  border-radius: 8px;
+}
+.line.short{ width: 70%; }
+
+.list{ list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.pill{
+  height: 14px;
+  border-radius: 999px;
+  background: #46444f;
+}
+
+/* Texto del perfil (contenido proyectado en cv-block) */
+.perfil-text { text-align: justify; }
+
+/* Ajuste espaciado del bloque Social */
+.block-social { margin-top: 12px; }
+
+/* Responsive específico del contenido de bloques (si se requiere) */
+/* (Nada que mover aquí por ahora; los cambios de layout mayores se quedan globales) */

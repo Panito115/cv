@@ -31,22 +31,31 @@
             <img [src]="s.img" [alt]="s.alt" width="40" height="40" class="rounded-circle border">
           </a>
         </div>
+
+        <!-- Botón: Descargar CV -->
         <a href="/docs/JuanPabloMadriz_CV.pdf" download class="btn btn-primary btn-lg w-100 my-3">
           <i class="bi bi-file-earmark-arrow-down"></i> Descargar CV
+        </a>
+
+        <!-- Botón: Descargar Certificado -->
+        <a href="/docs/JuanPabloMadriz_Certificado.pdf" download class="btn btn-secondary btn-lg w-100 my-3">
+          <i class="bi bi-file-earmark-arrow-down"></i> Descargar Certificado
         </a>
       </cv-block>
     </aside>
 
     <!-- LADO DERECHO -->
     <main class="content">
-      <!-- SOFT SKILLS -->
+      <!-- SOFT SKILLS (color por defecto) -->
       <cv-panel title="SOFT SKILLS">
         <section class="specialties">
-          <div class="spec" *ngFor="let i of [1,2,3,4,5,6]"><span class="glyph"></span></div>
+          <div class="spec" *ngFor="let i of [1,2,3,4,5,6]">
+            <span class="glyph"></span>
+          </div>
         </section>
       </cv-panel>
 
-      <!-- EXPERIENCIA LABORAL -->
+      <!-- EXPERIENCIA LABORAL (colapsable) -->
       <cv-panel title="EXPERIENCIA LABORAL" [collapsible]="true" storageKey="experience" bodyClass="experience">
         <article class="exp-row" *ngFor="let e of experience">
           <div class="year">{{ e.year }}</div>
@@ -57,8 +66,8 @@
         </article>
       </cv-panel>
 
-      <!-- HABILIDADES -->
-      <cv-panel title="HABILIDADES" [stripBottom]="true">
+      <!-- HABILIDADES (header rojo mediante clase del host) -->
+      <cv-panel title="HABILIDADES" class="skills-panel" [stripBottom]="true">
         <div class="skills-search-panel">
           <input [(ngModel)]="skillQuery"
                  type="search"
@@ -79,8 +88,8 @@
         </section>
       </cv-panel>
 
-      <!-- EDUCACIÓN -->
-      <cv-panel title="EDUCACIÓN" [stripBottom]="true" bodyClass="experience">
+      <!-- EDUCACIÓN (header verde mediante clase del host) -->
+      <cv-panel title="EDUCACIÓN" class="education-panel" [stripBottom]="true" bodyClass="experience">
         <article class="exp-row" *ngFor="let ed of education">
           <div class="year">{{ ed.year }}</div>
           <div>
