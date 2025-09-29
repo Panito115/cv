@@ -22,17 +22,17 @@
       </cv-block>
 
       <cv-block title="SOCIAL MEDIA" [collapsible]="true" storageKey="social" extraClasses="block-social">
-        <div class="d-flex gap-3 mb-3 mt-2">
+        <div class="d-flex gap-2 mb-2 mt-1">
           <a *ngFor="let s of socialLinks" [href]="s.href" target="_blank" class="d-flex align-items-center text-decoration-none">
             <img [src]="s.img" [alt]="s.alt" width="40" height="40" class="rounded-circle border">
           </a>
         </div>
 
-        <a href="/docs/JuanPabloMadriz_CV.pdf" download class="btn btn-primary btn-lg w-100 my-3">
+        <a href="/docs/JuanPabloMadriz_CV.pdf" download class="btn btn-primary btn-lg w-100 my-2">
           <i class="bi bi-file-earmark-arrow-down"></i> Descargar CV
         </a>
 
-        <a href="/docs/JuanPabloMadriz_Certificado.pdf" download class="btn btn-secondary btn-lg w-100 my-3">
+        <a href="/docs/JuanPabloMadriz_Certificado.pdf" download class="btn btn-secondary btn-lg w-100 my-2">
           <i class="bi bi-file-earmark-arrow-down"></i> Descargar Certificado
         </a>
       </cv-block>
@@ -48,7 +48,7 @@
         </section>
       </cv-panel>
 
-      <cv-panel title="EXPERIENCIA LABORAL" [collapsible]="true" storageKey="experience" bodyClass="experience">
+      <cv-panel class="experience-panel" title="EXPERIENCIA LABORAL" titleLink="/experience" [collapsible]="true" storageKey="experience" bodyClass="experience">
         <article class="exp-row" *ngFor="let e of experience">
           <div class="year">{{ e.year }}</div>
           <div>
@@ -58,7 +58,7 @@
         </article>
       </cv-panel>
 
-      <cv-panel title="HABILIDADES" class="skills-panel" [stripBottom]="true">
+      <cv-panel class="skills-panel" title="HABILIDADES" titleLink="/skills" [stripBottom]="true">
         <div class="skills-search-panel">
           <input [(ngModel)]="skillQuery"
                  type="search"
@@ -73,13 +73,13 @@
             <div class="dots">
               <span class="dot"
                     *ngFor="let filled of range(s.level)"
-                    [style.background]="filled ? 'currentColor' : 'transparent'"></span>
+                    [class.filled]="filled"></span>
             </div>
           </div>
         </section>
       </cv-panel>
 
-      <cv-panel title="EDUCACIÓN" class="education-panel" [stripBottom]="true" bodyClass="experience">
+      <cv-panel class="education-panel" title="EDUCACIÓN" titleLink="/education" [stripBottom]="true" bodyClass="experience">
         <article class="exp-row" *ngFor="let ed of education">
           <div class="year">{{ ed.year }}</div>
           <div>

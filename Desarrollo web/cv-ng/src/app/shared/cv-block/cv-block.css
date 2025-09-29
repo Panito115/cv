@@ -5,7 +5,7 @@
 }
 
 /* Bloque genérico + títulos */
-.block { display: grid; gap: 12px; }
+.block { display: grid; gap: 8px; }
 .block-title {
   margin: 0;
   font-size: 18px;
@@ -58,7 +58,7 @@
 .perfil-text { text-align: justify; }
 
 /* Ajuste espaciado del bloque Social */
-.block-social { margin-top: 12px; }
+.block-social { margin-top: 8px; }
 
 /* Responsive específico del contenido de bloques (si se requiere) */
 /* (Nada que mover aquí por ahora; los cambios de layout mayores se quedan globales) */

@@ -1,0 +1,15 @@
+.cv-link {
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 500;
+}
+.cv-link:hover {
+  opacity: 0.85;
+}
+
+cv-panel.experience-panel .exp-title,
+cv-panel.education-panel .exp-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
