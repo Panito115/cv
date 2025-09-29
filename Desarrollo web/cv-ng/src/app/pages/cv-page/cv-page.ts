@@ -1,22 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { RouterOutlet } from '@angular/router';
 
-import { CvBlockComponent } from './shared/cv-block/cv-block';
-import { CvPanelComponent } from './shared/cv-panel/cv-panel';
-import { ThemeService } from './core/theme';
-import { perfilText, socialLinks, experience, skills, education } from './data/cv-data';
+import { CvBlockComponent } from '../../shared/cv-block/cv-block';
+import { CvPanelComponent } from '../../shared/cv-panel/cv-panel';
+import { ThemeService } from '../../core/theme';
+import { perfilText, socialLinks, experience, skills, education } from '../../data/cv-data';
 
 @Component({
-  selector: 'app-root',
+  selector: 'cv-page',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterOutlet, CvBlockComponent, CvPanelComponent],
-  templateUrl: './app.html'
+  imports: [CommonModule, FormsModule, CvBlockComponent, CvPanelComponent],
+  templateUrl: './cv-page.html',
+  styleUrls: ['./cv-page.css']
 })
-export class App implements OnInit {
-  isLight$!: Observable<boolean>;
+export class CvPage {
+  get isLight$() { return this.theme.isLight$; }
 
   perfilText = perfilText;
   socialLinks = socialLinks;
@@ -27,10 +26,6 @@ export class App implements OnInit {
   skillQuery = '';
 
   constructor(private theme: ThemeService) {
-    this.isLight$ = this.theme.isLight$;
-  }
-
-  ngOnInit() {
     this.theme.applySavedTheme();
   }
 

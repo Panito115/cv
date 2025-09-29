@@ -111,7 +111,7 @@ header.strip.strip-bottom{ margin-top: 8px; }
 
 
 /*:host(.skills-panel) header.strip { background: red; }
-:host(.education-panel) header.strip { background: green; }.   
+:host(.education-panel) header.strip { background: green; }.   */
 
 
 /* ====== Responsive específico de paneles ====== */
