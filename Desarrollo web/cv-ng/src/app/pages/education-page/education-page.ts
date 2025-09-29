@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { lola, sexy } from '../../data/cv-data';
+
 @Component({
   selector: 'education-page',
   standalone: true,
@@ -8,4 +10,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './education-page.html',
   styleUrls: ['./education-page.css']
 })
-export class EducationPage {}
+export class EducationPage {
+  lola = lola;
+  sexy = sexy;
+}

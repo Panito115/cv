@@ -1,7 +1,55 @@
 .education-page {
-  padding: 24px;
+  padding: 48px 0;
 }
 
-.education-page h1 {
-  margin-bottom: 12px;
+.page-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+/* vuelve redondo el borde para mejorar estetica */
+.page-card {
+  background: var(--paper);
+  color: var(--text);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+/* Le da los colores al recuadro*/
+.page-card__header {
+  background: var(--accent);
+  padding: 24px 32px;
+}
+/* Estetica del titulo (H1) */
+.page-card__header h1 {
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: 3px;
+  color: #2b2a30;
+}
+/* tamaño del cuadro blanco */
+.page-card__body {
+  padding: 32px;
+}
+/* Ajusta el tamaño del contenido dentro del recuadro */
+.edu-text {
+  margin: 0;
+  color: black;
+  font-size: 15px;
+  line-height: 1.6;
+}
+/* Hace la pagina responsive */
+@media (max-width: 640px) {
+  .education-page {
+    padding: 32px 0;
+  }
+
+  .page-card__header,
+  .page-card__body {
+    padding: 24px;
+  }
+
+  .page-card__header h1 {
+    font-size: 1.5rem;
+  }
 }
