@@ -3,6 +3,7 @@ import { CvPage } from './pages/cv-page/cv-page';
 import { ExperiencePage } from './pages/experience-page/experience-page';
 import { SkillsPage } from './pages/skills-page/skills-page';
 import { EducationPage } from './pages/education-page/education-page';
+
 // rutas
 export const routes: Routes = [
   { path: '', component: CvPage },       

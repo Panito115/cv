@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { CvBlockComponent } from '../../shared/cv-block/cv-block';
 import { CvPanelComponent } from '../../shared/cv-panel/cv-panel';
 import { ThemeService } from '../../core/theme';
-import { perfilText, socialLinks, experience, skills, education } from '../../data/cv-data';
+import { perfilText, socialLinks, experience, skills, education, nombre, carrera, trabajo} from '../../data/cv-data';
 
 @Component({
   selector: 'cv-page',
@@ -17,6 +17,9 @@ import { perfilText, socialLinks, experience, skills, education } from '../../da
 export class CvPage {
   get isLight$() { return this.theme.isLight$; }
 
+  nombre = nombre;
+  carrera = carrera;
+  trabajo = trabajo;
   perfilText = perfilText;
   socialLinks = socialLinks;
   experience = experience;

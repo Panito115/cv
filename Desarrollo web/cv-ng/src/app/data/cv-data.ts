@@ -1,5 +1,11 @@
-// En este apartado se cambia y modifica cualquier información de cv-page
+// En este apartado se cambia y modifica cualquier información de cv-page (lado izquierdo)
+export const nombre = "Juan Pablo Madriz"
 
+export const carrera = "Computer science"
+
+export const trabajo = "Space x CEO"
+
+// En este apartado se cambia y modifica cualquier información de cv-page (lado derecho)
 export const perfilText = `Me apasiona la ciencia de la computación y la resolución creativa de problemas, encontrando motivación en cada reto que me permite 
 aprender y crecer. Mis principales habilidades incluyen la creatividad, la capacidad de influir positivamente en las personas y el
 trabajo en equipo, cualidades que me permiten aportar valor en proyectos colaborativos e innovadores. Además, disfruto transformar ideas 
@@ -29,6 +35,6 @@ export const education = [
   { year: '2024–Pres.', title: 'Universidad Francisco Marroquín (UFM)', desc: 'Computer Science & Business Engineering — cursos relevantes: Estructuras de Datos, CS:APP, Estadística, Microeconomía.' },
 ];
 
-//En este apartado se modifica la información de la ruta /education
+//En este apartado se modifica la información de la ruta /education (cambiar y modificar esto tanto las variables como la información)
 export const lola = "hola"
 export const sexy = "i like big dick"
