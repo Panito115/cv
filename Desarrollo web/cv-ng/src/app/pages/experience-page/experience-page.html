@@ -1,12 +1,29 @@
-<section class="education-page">
+<section class="experience-page">
   <div class="page-wrap">
-    <div class="page-card">
-      <header class="page-card__header">
-        <h1>EXPERIENCIA</h1>
-      </header>
-      <div class="page-card__body">
-        <p class="edu-text">Hola mundo</p>
+    <div class="page-card-grid">
+      <div class="page-card">
+        <header class="page-card__header">
+          <h1>
+            <a class="page-card__link" routerLink="laboral" routerLinkActive="active">Experiencia Laboral</a>
+          </h1>
+        </header>
+        <div class="page-card__body">
+          <p class="card-text">Hola mundo</p>
+        </div>
+      </div>
+
+      <div class="page-card">
+        <header class="page-card__header">
+          <h1>
+            <a class="page-card__link" routerLink="experiencia" routerLinkActive="active">Proyectos</a>
+          </h1>
+        </header>
+        <div class="page-card__body">
+          <p class="card-text">Hola mundo</p>
+        </div>
       </div>
     </div>
+
+    <router-outlet></router-outlet>
   </div>
 </section>
