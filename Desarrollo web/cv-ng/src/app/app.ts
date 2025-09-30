@@ -7,7 +7,8 @@ import { RouterOutlet } from '@angular/router';
 import { CvBlockComponent } from './shared/cv-block/cv-block';
 import { CvPanelComponent } from './shared/cv-panel/cv-panel';
 import { ThemeService } from './core/theme';
-import { perfilText, socialLinks, experience, skills, education } from './data/cv-data';
+import { perfilText, socialLinks, experience, education } from './data/cv-data';
+import { SkillsService, Skill } from './shared/services/skills.service';
 
 @Component({
   selector: 'app-root',
@@ -21,13 +22,14 @@ export class App implements OnInit {
   perfilText = perfilText;
   socialLinks = socialLinks;
   experience = experience;
-  skills = skills;
+  skills: Skill[] = [];
   education = education;
 
   skillQuery = '';
 
-  constructor(private theme: ThemeService) {
+  constructor(private theme: ThemeService, private skillsService: SkillsService) {
     this.isLight$ = this.theme.isLight$;
+    this.skills = this.skillsService.getSkills();
   }
 
   ngOnInit() {

@@ -23,13 +23,6 @@ export const experience = [
   { year: '2024', title: 'Practicante en Análisis de Datos – DataVision Analytics', desc: 'Apoyé en la recolección, limpieza y visualización de datos utilizando SQL y Python (pandas, matplotlib), generando reportes que facilitaron la toma de decisiones estratégicas.' },
 ];
 
-export const skills = [
-  { name: 'Python',      level: 9 },
-  { name: 'JavaScript',  level: 5 },
-  { name: 'HTML',  level: 9 },
-  { name: 'CSS',  level: 7 },
-];
-
 export const education = [
   { year: '2018–2021', title: 'Colegio Bilingüe New Horizons', desc: 'Bachillerato en Ciencias y Letras — graduado con honores, GPA: 3.8/4.0.' },
   { year: '2024–Pres.', title: 'Universidad Francisco Marroquín (UFM)', desc: 'Computer Science & Business Engineering — cursos relevantes: Estructuras de Datos, CS:APP, Estadística, Microeconomía.' },
@@ -38,3 +31,5 @@ export const education = [
 //En este apartado se modifica la información de la ruta /education (cambiar y modificar esto tanto las variables como la información)
 export const lola = "hola"
 export const sexy = "i like big dick"
+export const proyectosTitle = "Proyectos"
+export const proyectosDescription = "Hola mundo"

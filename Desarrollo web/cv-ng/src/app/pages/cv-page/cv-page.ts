@@ -5,7 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { CvBlockComponent } from '../../shared/cv-block/cv-block';
 import { CvPanelComponent } from '../../shared/cv-panel/cv-panel';
 import { ThemeService } from '../../core/theme';
-import { perfilText, socialLinks, experience, skills, education, nombre, carrera, trabajo} from '../../data/cv-data';
+import { perfilText, socialLinks, experience, education, nombre, carrera, trabajo} from '../../data/cv-data';
+import { SkillsService, Skill } from '../../shared/services/skills.service';
 
 @Component({
   selector: 'cv-page',
@@ -23,13 +24,14 @@ export class CvPage {
   perfilText = perfilText;
   socialLinks = socialLinks;
   experience = experience;
-  skills = skills;
+  skills: Skill[] = [];
   education = education;
 
   skillQuery = '';
 
-  constructor(private theme: ThemeService) {
+  constructor(private theme: ThemeService, private skillsService: SkillsService) {
     this.theme.applySavedTheme();
+    this.skills = this.skillsService.getSkills();
   }
 
   toggleTheme() { this.theme.toggle(); }
