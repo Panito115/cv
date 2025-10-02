@@ -8,7 +8,7 @@
         </button>
       </div>
 
-      <img src="/img/mi_foto.png" alt="Foto de perfil" class="avatar">
+      <img src="/img/fotopersonal.png" alt="Foto de perfil" class="avatar">
       <div class="name-role">
         <div class="skeleton title-lg"> {{ nombre }} </div>
         <div class="skeleton title-md"> {{ carrera }} </div>
@@ -41,9 +41,9 @@
     <!-- LADO DERECHO -->
     <main class="content">
       <cv-panel title="SOFT SKILLS">
-        <section class="specialties">
-          <div class="spec" *ngFor="let i of [1,2,3,4,5,6]">
-            <span class="glyph"></span>
+        <section class="skills soft-skills">
+          <div class="skill" *ngFor="let soft of softSkills">
+            <span class="label short">{{ soft }}</span>
           </div>
         </section>
       </cv-panel>

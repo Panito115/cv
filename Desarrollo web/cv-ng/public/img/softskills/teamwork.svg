@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="grad-team" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c0f5d5" />
+      <stop offset="100%" stop-color="#4bbd8b" />
+    </linearGradient>
+  </defs>
+  <circle cx="22" cy="22" r="10" fill="#4bbd8b" opacity="0.9" />
+  <circle cx="42" cy="22" r="10" fill="#4bbd8b" opacity="0.7" />
+  <path d="M12 46c2-10 12-14 20-14s18 4 20 14H12z" fill="url(#grad-team)" />
+  <path d="M20 52a4 4 0 118 0 4 4 0 01-8 0zm16 0a4 4 0 118 0 4 4 0 01-8 0z" fill="#2a7a5a" />
+</svg>

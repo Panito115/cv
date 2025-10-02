@@ -28,27 +28,6 @@ header.strip h2{
 }
 header.strip.strip-bottom{ margin-top: 8px; }
 
-/* SOFT SKILLS (rejilla 3x2) */
-.specialties{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-.spec{
-  display: grid;
-  place-items: center;
-  padding: 18px;
-  border: 2px solid var(--line);
-  border-radius: 14px;
-}
-.glyph{
-  width: 48px; height: 48px; border-radius: 12px;
-  background:
-    radial-gradient(circle at 30% 30%, #ffffff 0 35%, transparent 36%),
-    linear-gradient(#ffb8aa, #f39b8b);
-  box-shadow: 0 2px 0 #e1e1e6 inset;
-}
-
 /* EXPERIENCIA */
 .experience{ padding: 0 22px 6px 22px; display: grid; gap: 18px; }
 .exp-row{
