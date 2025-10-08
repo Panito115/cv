@@ -18,28 +18,15 @@ header.strip h2{
   letter-spacing: 2px;
   color: #2b2a30;
 }
+.panel-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+.panel-title-link:hover,
+.panel-title-link:focus {
+  text-decoration: underline;
+}
 header.strip.strip-bottom{ margin-top: 8px; }
-
-/* SOFT SKILLS (rejilla 3x2) */
-.specialties{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-.spec{
-  display: grid;
-  place-items: center;
-  padding: 18px;
-  border: 2px solid var(--line);
-  border-radius: 14px;
-}
-.glyph{
-  width: 48px; height: 48px; border-radius: 12px;
-  background:
-    radial-gradient(circle at 30% 30%, #ffffff 0 35%, transparent 36%),
-    linear-gradient(#ffb8aa, #f39b8b);
-  box-shadow: 0 2px 0 #e1e1e6 inset;
-}
 
 /* EXPERIENCIA */
 .experience{ padding: 0 22px 6px 22px; display: grid; gap: 18px; }
@@ -57,6 +44,8 @@ header.strip.strip-bottom{ margin-top: 8px; }
 .exp-body{ display: grid; gap: 8px; }
 .title-sm{ height: 16px; background: var(--line); border-radius: 8px; width: 60%; }
 .exp-title { color: var(--text); }
+
+
 /* En modo claro, los títulos de experiencia van en gris (como el año) */
 :host-context(.light-mode) .exp-title {
   color: var(--muted);
@@ -91,8 +80,16 @@ header.strip.strip-bottom{ margin-top: 8px; }
 }
 .dots{ display: grid; grid-auto-flow: column; gap: 8px; justify-content: start; }
 .dot{
-  width: 10px; height: 10px; border-radius: 50%;
-  border: 2px solid var(--charcoal); background: transparent;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--charcoal);
+  background: transparent;
+}
+.dot.filled {
+  background-color: var(--accent);
+  border-color: var(--accent);
 }
 
 /* Botones de acción en headers de paneles (si los usas) */
@@ -111,7 +108,7 @@ header.strip.strip-bottom{ margin-top: 8px; }
 
 
 /*:host(.skills-panel) header.strip { background: red; }
-:host(.education-panel) header.strip { background: green; }.   
+:host(.education-panel) header.strip { background: green; }.   */
 
 
 /* ====== Responsive específico de paneles ====== */

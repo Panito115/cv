@@ -1,12 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'cv-panel',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './cv-panel.html',
-  styleUrl: './cv-panel.css'   // 👈 IMPORTANTE: enlaza el CSS del componente
+  styleUrls: ['./cv-panel.css']   // 👈 IMPORTANTE: enlaza el CSS del componente
 })
 export class CvPanelComponent implements OnInit {
   @Input() title = '';
@@ -14,6 +15,7 @@ export class CvPanelComponent implements OnInit {
   @Input() storageKey?: string;
   @Input() stripBottom = false;   // agrega clase 'strip-bottom' al header
   @Input() bodyClass = '';        // clase para el <section> contenedor
+  @Input() titleLink?: string | any[]; // ruta opcional para convertir el título en enlace
 
   collapsed = false;
 

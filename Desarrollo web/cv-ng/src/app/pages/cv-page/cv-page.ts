@@ -1,39 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { RouterOutlet } from '@angular/router';
 
-import { CvBlockComponent } from './shared/cv-block/cv-block';
-import { CvPanelComponent } from './shared/cv-panel/cv-panel';
-import { ThemeService } from './core/theme';
-import { perfilText, socialLinks, experience, education } from './data/cv-data';
-import { SkillsService, Skill } from './shared/services/skills.service';
+import { CvBlockComponent } from '../../shared/cv-block/cv-block';
+import { CvPanelComponent } from '../../shared/cv-panel/cv-panel';
+import { ThemeService } from '../../core/theme';
+import { perfilText, socialLinks, experience, education, nombre, carrera, trabajo, softSkills } from '../../data/cv-data';
+import { SkillsService, Skill } from '../../shared/services/skills.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'cv-page',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterOutlet, CvBlockComponent, CvPanelComponent],
-  templateUrl: './app.html'
+  imports: [CommonModule, FormsModule, CvBlockComponent, CvPanelComponent],
+  templateUrl: './cv-page.html',
+  styleUrls: ['./cv-page.css']
 })
-export class App implements OnInit {
-  isLight$!: Observable<boolean>;
+export class CvPage {
+  get isLight$() { return this.theme.isLight$; }
 
+  nombre = nombre;
+  carrera = carrera;
+  trabajo = trabajo;
   perfilText = perfilText;
   socialLinks = socialLinks;
   experience = experience;
   skills: Skill[] = [];
   education = education;
+  softSkills = softSkills;
 
   skillQuery = '';
 
   constructor(private theme: ThemeService, private skillsService: SkillsService) {
-    this.isLight$ = this.theme.isLight$;
-    this.skills = this.skillsService.getSkills();
-  }
-
-  ngOnInit() {
     this.theme.applySavedTheme();
+    this.skills = this.skillsService.getSkills();
   }
 
   toggleTheme() { this.theme.toggle(); }

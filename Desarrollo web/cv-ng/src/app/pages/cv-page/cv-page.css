@@ -1,0 +1,38 @@
+.cv-link {
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 500;
+}
+.cv-link:hover {
+  opacity: 0.85;
+}
+
+cv-panel.experience-panel .exp-title,
+cv-panel.education-panel .exp-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.perfil-text {
+  text-align: justify;
+}
+
+.skills .label.short {
+  display: inline-flex;
+  align-items: center;
+}
+
+.skills .label.short::before {
+  content: '\2022';
+  margin-right: 8px;
+  color: var(--text);
+}
+
+.soft-skills .skill {
+  grid-template-columns: 1fr;
+}
+
+.soft-skills .label.short {
+  font-size: 1rem;
+}
