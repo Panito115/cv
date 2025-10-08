@@ -36,10 +36,68 @@
           <i class="bi bi-file-earmark-arrow-down"></i> Descargar Certificado
         </a>
       </cv-block>
+
+      <cv-block title="GITHUB" [collapsible]="true" storageKey="github">
+        <div *ngIf="isGithubLoading" class="api-status">Cargando perfil...</div>
+
+        <div *ngIf="!isGithubLoading && githubError" class="api-status error">
+          {{ githubError }}
+        </div>
+
+        <div *ngIf="!isGithubLoading && !githubError && githubProfile as profile" class="github-profile">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <img [src]="profile.avatar_url" [alt]="profile.login" width="64" height="64" class="rounded-circle border">
+            <div>
+              <a [href]="profile.html_url" target="_blank" class="github-username">
+                {{ profile.login }}
+              </a>
+              <div class="github-name" *ngIf="profile.name">{{ profile.name }}</div>
+              <div class="github-location" *ngIf="profile.location">{{ profile.location }}</div>
+            </div>
+          </div>
+          <p class="github-bio" *ngIf="profile.bio">{{ profile.bio }}</p>
+          <div class="github-stats">
+            <div>
+              <span class="stat-value">{{ profile.public_repos }}</span>
+              <span class="stat-label">Repos</span>
+            </div>
+            <div>
+              <span class="stat-value">{{ profile.followers }}</span>
+              <span class="stat-label">Seguidores</span>
+            </div>
+            <div>
+              <span class="stat-value">{{ profile.following }}</span>
+              <span class="stat-label">Siguiendo</span>
+            </div>
+          </div>
+        </div>
+      </cv-block>
     </aside>
 
     <!-- LADO DERECHO -->
     <main class="content">
+      <cv-panel class="weather-panel" [title]="'CLIMA EN ' + (weatherData?.city || weatherCity)">
+        <div *ngIf="isWeatherLoading" class="api-status">Cargando clima...</div>
+
+        <div *ngIf="!isWeatherLoading && weatherError" class="api-status error">
+          {{ weatherError }}
+        </div>
+
+        <div *ngIf="!isWeatherLoading && !weatherError && weatherData as weather" class="weather-card">
+          <div class="weather-main">
+            <img *ngIf="weather.iconUrl" [src]="weather.iconUrl" [alt]="weather.description" width="72" height="72">
+            <div>
+              <div class="weather-temp">{{ weather.temperature | number:'1.0-1' }}°C</div>
+              <div class="weather-desc text-capitalize">{{ weather.description }}</div>
+            </div>
+          </div>
+          <div class="weather-meta">
+            <span>Sensación: {{ weather.feelsLike | number:'1.0-1' }}°C</span>
+            <span>Humedad: {{ weather.humidity }}%</span>
+          </div>
+        </div>
+      </cv-panel>
+
       <cv-panel title="SOFT SKILLS">
         <section class="skills soft-skills">
           <div class="skill" *ngFor="let soft of softSkills">
