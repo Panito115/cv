@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, PLATFORM_ID } from '@angular/core';
+import { Component, inject, PLATFORM_ID, afterNextRender } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -20,7 +20,7 @@ import { API_CONFIG } from '../../core/config/api.config';
   templateUrl: './cv-page.html',
   styleUrls: ['./cv-page.css']
 })
-export class CvPage implements OnInit {
+export class CvPage {
   get isLight$() { return this.theme.isLight$; }
 
   nombre = nombre;
@@ -60,14 +60,14 @@ export class CvPage implements OnInit {
       .subscribe((skills) => {
         this.skills = skills;
       });
-  }
 
-  ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      this.loadSkills();
-      this.loadGithubProfile();
-      this.loadWeather();
-    }
+    afterNextRender(() => {
+      if (isPlatformBrowser(this.platformId)) {
+        this.loadSkills();
+        this.loadGithubProfile();
+        this.loadWeather();
+      }
+    });
   }
 
   toggleTheme() { this.theme.toggle(); }
