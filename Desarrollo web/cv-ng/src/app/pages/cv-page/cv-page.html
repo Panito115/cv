@@ -69,7 +69,7 @@
 
         <section class="skills">
           <div class="skill" *ngFor="let s of filteredSkills()">
-            <span class="label short">{{ s.name }}</span>
+            <span class="label short">{{ s.name }}{{ s.name }}</span>
             <div class="dots">
               <span class="dot"
                     *ngFor="let filled of range(s.level)"
