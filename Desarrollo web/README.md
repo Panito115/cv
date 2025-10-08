@@ -18,4 +18,4 @@ npm install
 npm run dev
 ```
 
-El servidor se inicia en `http://localhost:3000` (puerto configurable vía `PORT`). El endpoint `GET /health` responde con `{"message":"ok"}` para verificar el estado del servicio.
+El servidor se inicia en `` (puerto configurable vía `PORT`). El endpoint `GET /health` responde con `{"message":"ok"}` para verificar el estado del servicio.
