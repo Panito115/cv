@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -7,6 +7,8 @@ import { CvPanelComponent } from '../../shared/cv-panel/cv-panel';
 import { ThemeService } from '../../core/theme';
 import { perfilText, socialLinks, experience, education, nombre, carrera, trabajo, softSkills } from '../../data/cv-data';
 import { SkillsService, Skill } from '../../shared/services/skills.service';
+import { isPlatformBrowser } from '@angular/common';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'cv-page',
@@ -15,7 +17,7 @@ import { SkillsService, Skill } from '../../shared/services/skills.service';
   templateUrl: './cv-page.html',
   styleUrls: ['./cv-page.css']
 })
-export class CvPage {
+export class CvPage implements OnInit {
   get isLight$() { return this.theme.isLight$; }
 
   nombre = nombre;
@@ -29,10 +31,25 @@ export class CvPage {
   softSkills = softSkills;
 
   skillQuery = '';
+  private readonly platformId = inject(PLATFORM_ID);
 
   constructor(private theme: ThemeService, private skillsService: SkillsService) {
     this.theme.applySavedTheme();
-    this.skills = this.skillsService.getSkills();
+    this.skillsService.skills$
+      .pipe(takeUntilDestroyed())
+      .subscribe((skills) => {
+        this.skills = skills;
+      });
+  }
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.skillsService.loadSkills().subscribe({
+        error: (error) => {
+          console.error('Error loading skills from API', error);
+        },
+      });
+    }
   }
 
   toggleTheme() { this.theme.toggle(); }

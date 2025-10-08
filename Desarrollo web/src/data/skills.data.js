@@ -14,6 +14,11 @@ const skills = [
     name: 'TypeScript',
     level: 'Intermediate',
   },
+  {
+    id: 4,
+    name: 'Python',
+    level: 'Advanced',
+  },
 ];
 
 let nextId = skills.length + 1;
