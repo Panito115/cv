@@ -2,3 +2,16 @@ ng serve -o
 lsof -i :4200
 Kill -o (numero que me da)
 http://localhost:4200/
+
+
+curl http://localhost:3000/skills
+
+curl -X POST http://localhost:3000/skills -H "Content-Type: application/json" -d '{"name":"React","level":"Advanced"}'
+
+curl -X PATCH http://localhost:3000/skills/6 -H "Content-Type: application/json" -d '{"name":"osi"}'
+
+curl -X DELETE http://localhost:3000/skills/1
+
+
+
+curl -X PATCH http://localhost:3000/skills/6 -H "Content-Type: application/json" -d '{"name":"lol","level":"Expert"}'

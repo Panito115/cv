@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, map, tap } from 'rxjs';
+import { API_CONFIG } from '../../core/config/api.config';
 
 export interface Skill {
   name: string;
@@ -9,7 +10,7 @@ export interface Skill {
 
 @Injectable({ providedIn: 'root' })
 export class SkillsService {
-  private readonly baseUrl = 'http://localhost:3000';
+  private readonly baseUrl = API_CONFIG.cvApiBaseUrl || 'http://localhost:3000';
   private readonly levelMap: Record<string, number> = {
     beginner: 3,
     intermediate: 5,

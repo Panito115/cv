@@ -1,5 +1,7 @@
 export const API_CONFIG = {
 
+  cvApiBaseUrl: 'http://localhost:3000',
+
   githubUser: 'Panito115',
 
   weatherCity: 'Guatemala',
