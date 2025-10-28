@@ -1,0 +1,19 @@
+<header class="strip" [ngClass]="{'strip-bottom': stripBottom}">
+  <h2 class="m-0">
+    <ng-container *ngIf="titleLink; else plainTitle">
+      <a [routerLink]="titleLink" class="panel-title-link">{{ title }}</a>
+    </ng-container>
+    <ng-template #plainTitle>{{ title }}</ng-template>
+  </h2>
+  <button *ngIf="collapsible"
+          class="btn btn-sm btn-outline-dark"
+          (click)="toggle()"
+          [attr.aria-expanded]="!collapsed"
+          [title]="collapsed ? 'Mostrar' : 'Ocultar'">
+    <i class="bi" [ngClass]="collapsed ? 'bi-chevron-down' : 'bi-chevron-up'"></i>
+  </button>
+</header>
+
+<section [class.d-none]="collapsed" [ngClass]="bodyClass">
+  <ng-content></ng-content>
+</section>

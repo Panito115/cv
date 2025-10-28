@@ -1,0 +1,127 @@
+.cv-link {
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 500;
+}
+.cv-link:hover {
+  opacity: 0.85;
+}
+
+cv-panel.experience-panel .exp-title,
+cv-panel.education-panel .exp-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.perfil-text {
+  text-align: justify;
+}
+
+.skills .label.short {
+  display: inline-flex;
+  align-items: center;
+}
+
+.skills .label.short::before {
+  content: '\2022';
+  margin-right: 8px;
+  color: var(--text);
+}
+
+.soft-skills .skill {
+  grid-template-columns: 1fr;
+}
+
+.soft-skills .label.short {
+  font-size: 1rem;
+}
+
+.api-status {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.api-status.error {
+  color: var(--accent);
+}
+
+.github-profile {
+  font-size: 0.95rem;
+}
+
+.github-username {
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+}
+
+.github-username:hover {
+  text-decoration: underline;
+}
+
+.github-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.github-location {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.github-bio {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+  opacity: 0.75;
+}
+
+.github-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.github-stats .stat-value {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.github-stats .stat-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.weather-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.weather-main {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.weather-temp {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.weather-desc {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.weather-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}

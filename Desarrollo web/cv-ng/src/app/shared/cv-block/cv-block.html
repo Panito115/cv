@@ -1,0 +1,16 @@
+<section class="block" [ngClass]="extraClasses">
+  <div class="block-title-row" *ngIf="title">
+    <h3 class="block-title m-0">{{ title }}</h3>
+    <button *ngIf="collapsible"
+            class="btn btn-sm btn-icon"
+            (click)="toggle()"
+            [attr.aria-expanded]="!collapsed"
+            [title]="collapsed ? 'Mostrar' : 'Ocultar'">
+      <i class="bi" [ngClass]="collapsed ? 'bi-chevron-down' : 'bi-chevron-up'"></i>
+    </button>
+  </div>
+
+  <div [class.d-none]="collapsed">
+    <ng-content></ng-content>
+  </div>
+</section>
