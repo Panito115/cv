@@ -3,7 +3,7 @@ export const nombre = "Juan Pablo Madriz"
 
 export const carrera = "Computer science"
 
-export const trabajo = "Estudiante"
+export const trabajo = "Asistente técnico"
 
 // En este apartado se cambia y modifica cualquier información de cv-page (lado derecho)
 export const perfilText = `Me apasiona la ciencia de la computación y la resolución creativa de problemas, encontrando motivación en cada reto que me permite 
