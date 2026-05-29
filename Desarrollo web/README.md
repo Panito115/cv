@@ -18,7 +18,7 @@ npm install
 ```bash
 npm run dev
 cd "Desarrollo web" && python3 -m http.server 4000
-
+kill $(lsof -ti:4000) && python3 -m http.server 4000
 ```
 
 El servidor arranca en `http://localhost:3000` (puerto configurable vía la variable de entorno `PORT`). Puedes verificar el estado con `GET /health`, que responde con `{"message":"ok"}`.
